@@ -141,3 +141,5 @@ CREATE TABLE
         nom VARCHAR(100),
         description VARCHAR(255)
     );
+
+/* salut */
