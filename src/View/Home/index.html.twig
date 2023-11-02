@@ -1,6 +1,63 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+{% endblock %}
+
 {% block content %}
-    <h1>Hello Wilder !</h1>
-    <p>Find a complete CRUD example on <a href="/items">/items</a> page.</p>
+<!-- Swiper -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Resize me 1!</div>
+    <div class="swiper-slide">Resize me 2!</div>
+    <div class="swiper-slide">Resize me 3!</div>
+    <div class="swiper-slide">Resize me 4!</div>
+
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<div class="uk-container">
+  <p>Strascook est né de l'envie du chef Strasbourgeois Yavuz Kutuk de vous faire vivre une expérience culinaire exceptionnelle à domicile. 
+    <br><br>La qualité d'un repas gatronomique dans l'intimité de votre chez vous, pour un moment privilégié et hors du temps.</p>
+</div>
+
+<div class="uk-container">
+  <button class="uk-button-large">Réservation</button>
+</div>
+{% endblock %}
+
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    direction: getDirection(),
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+
+  function getDirection() {
+    var windowWidth = window.innerWidth;
+    var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+    return direction;
+  }
+</script>
 {% endblock %}
