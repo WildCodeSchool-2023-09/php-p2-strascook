@@ -1,0 +1,46 @@
+footer {
+    background-color: #4A4A4A !important;
+}
+
+footer * {
+color: white !important;
+
+}
+
+
+/*Media Query*/
+
+@media screen and (max-width: 768px){
+
+    .uk-navbar-left{
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .uk-navbar-right{
+        display: flex;
+        
+    
+    }
+}
+
+@media screen and (max-width: 490px){
+
+    .uk-navbar-left{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    p {
+        text-align:center;
+
+    }
+
+    .uk-navbar-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: first baseline ;
+
+    }
+}

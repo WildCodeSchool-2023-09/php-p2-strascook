@@ -7,14 +7,26 @@
     <link rel="icon" href="/assets/images/favicon.png">
 
     <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.cdnfonts.com/css/livvic" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/noto-serif" rel="stylesheet">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/css/uikit.min.css" />
 
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style_footer.css">
     {% block stylesheet %}{% endblock %}
 </head>
 
 <body>
+
     {% block content %}{% endblock %}
     {% block javascript %}{% endblock %}
+
+    <!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
+
+{% include '/layout/_footer.html.twig' %}
 </body>
 </html>
 
