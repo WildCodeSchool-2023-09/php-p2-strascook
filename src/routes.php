@@ -14,11 +14,11 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
 
-    'accueil' => ['AccueilController', 'accueil',],
-    'menus' => ['MenusController', 'menus',],
-    'reservation' => ['ReservationController', 'reservation',],
-    'connexion' => ['ConnexionController', 'connexion',],
-    'contact' => ['ContactController', 'contact',],
-    'inscription' => ['InscriptionController', 'inscription',],
+    'accueil' => ['AccueilController', 'index',],
+    'menus' => ['MenusController', 'index',],
+    'reservation' => ['ReservationController', 'index',],
+    'connexion' => ['ConnexionController', 'index',],
+    'contact' => ['ContactController', 'index',],
+    'inscription' => ['InscriptionController', 'index',],
 
 ];

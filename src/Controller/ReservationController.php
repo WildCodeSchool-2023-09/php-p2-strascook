@@ -6,8 +6,7 @@ use App\Controller\AbstractController;
 
 class ReservationController extends AbstractController
 {
-
-    public function reservation()
+    public function index()
     {
         return $this->twig->render('reservation/reservation.html.twig');
     }
