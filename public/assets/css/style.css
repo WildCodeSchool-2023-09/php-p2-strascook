@@ -1,3 +1,18 @@
-body {
-    color: #f76c6c;
+:root {
+    --main-color: #8B0901;
+    --dark: black;
+    --accent-color: #D9B114;
+    --soft-dark: #4A4A4A;
+    --main-font: 'livvic';
+    --title-font: 'noto-serif';
+    --padding: 1rem;
+    --margin: 1rem;
+
 }
+
+nav {
+    background-color: rgb(255, 255, 255) !important;
+        padding: 8px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
