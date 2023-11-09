@@ -1,5 +1,41 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/_cards.css" />
+{% endblock %}
+
+
 {% block content %} 
 C'est ici que va le code de la page Menus. 
+
+{# Le code utilise /public/assets/css/_cards.css #}
+
+{# 
+Reste à faire : 
+PDO + REQUETE SQL SUR: Le nom du menu, l'image, la description,  le prix.
+Boucle FOR sur le nombre de menus à afficher.
+Template d'affichage des menus:  
+#}
+
+
+
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-card-media-left uk-cover-container">
+        <img src="/assets/images/cardSampleImage.jpg" alt="" uk-cover class="rounded-image padding-pic">
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">Nom du menu</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+
+            <div>
+                <button class="uk-button uk-button-default rounded-image button-position">Prix/pers. €</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 {% endblock %}
