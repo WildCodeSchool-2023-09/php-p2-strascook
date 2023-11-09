@@ -1,0 +1,92 @@
+{% extends "layout.html.twig" %}
+
+
+{% block content %}
+	<div class="titre-resa">
+		<h1>Réservez votre expérience</h1>
+	</div>
+
+	<div class="form-resa">
+		<form action="\" method="POST">
+
+			<div class="champs-form">
+
+				<div class="colonne1">
+
+					<label for="text">Vos coordonnées</label>
+
+					<div>
+						<input type="text" name="name" placeholder="Votre nom">
+					</div>
+
+					<div>
+						<input type="text" name="prenom" placeholder="Votre prénom">
+					</div>
+
+					<div>
+						<input type="text" name="adresse1" placeholder="Votre adresse 1">
+					</div>
+
+					<div>
+						<input type="text" name="adresse2" placeholder="Votre adresse 2">
+					</div>
+
+					<div>
+						<input type="text" name="telephone" placeholder="Votre numéro de téléphone">
+					</div>
+
+					<div>
+						<input type="email" name="mail" placeholder="Votre adresse email">
+					</div>
+
+				</div>
+
+
+				<div>
+
+					<div class="colonne2">
+
+						<div class="menu-date">
+							<div class="choix-menu">
+								<div>
+									<label for="text">Votre choix de menu:</label>
+								</div>
+								<select name="choix">
+									<option value="début">Veuillez sélectionner votre choix</option>
+									<option value="Menu1">Menu Soirée Fastfood</option>
+									<option value="Menu2">Menu Soirée Asiatique</option>
+									<option value="Menu3">Menu Soirée Moléculaire</option>
+									<option value="Menu4">Menu Soirée Végan</option>
+									<option value="Menu5">Menu Soirée Gastronomique</option>
+									<option value="Menu6">Menu Soirée Strasbourgeoise</option>
+								</select>
+							</div>
+							<div class="date-resa">
+								<div>
+									<label for="text">La date de votre soirée:</label>
+								</div>
+								<input type="date" name="date">
+							</div>
+						</div>
+					</div>
+
+
+					<div class="usermessage">
+						<div>
+							<label for="text">Remarques particulières:</label>
+						</div>
+						<textarea name="usermessage" rows="4" cols="10" maxlenght="300"></textarea>
+						<div></div>
+
+
+					</div>
+
+					<div class="uk-container">
+						<button class="uk-button-large">Réservez</button>
+					</div>
+
+
+				</form>
+			</div>
+
+		{% endblock %}
