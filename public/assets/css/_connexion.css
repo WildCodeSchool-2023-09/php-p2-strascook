@@ -1,31 +1,37 @@
-:root {
-    --main-color: #8B0901;
-    --dark: black;
-    --accent-color: #D9B114;
-    --soft-dark: #4A4A4A;
-    --main-font: 'livvic';
-    --title-font: 'noto-serif';
-    --padding: 1rem;
-    --margin: 1rem;
-    --font-size: 1rem;
-
-}
-
-.uk-button-large {
-    background-color: var(--accent-color);
-    border: none;
-    font-family: var(--main-font);
-    font-size: calc(var(--font-size)*1.5);
-    border-radius: 35px;
-}
-
 .connexion-form {
     background-color: var(--main-color);
     font-family: var(--main-font);
-    width: 100%;
+    width: 45%;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: var(--box-shadow);
 }
 
-.uk-heading-small {
-    font-family: var(--title-font);
-    padding-bottom: calc(var(--padding)*4);
+.connexion-champ {
+    box-shadow: var(--box-shadow);
+    border: none;
+    height: calc(var(--size)*2.5);
+    border-radius: 20px;
+    margin: auto;
+}
+
+.connexion-label-input {
+    display: flex;
+    flex-direction: column;
+    padding-top: calc(var(--padding)*1.5);
+    gap: 1rem;
+}
+
+.connexion-label {
+    color: white;
+    margin: auto;
+    font-size: calc(var(--font-size)*1.5);
+}
+
+.button-connexion-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: calc(var(--padding)*3);
+    padding-bottom: calc(var(--padding)*3);
 }

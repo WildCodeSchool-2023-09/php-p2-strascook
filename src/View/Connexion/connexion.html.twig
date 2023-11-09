@@ -4,27 +4,31 @@
 
 {% block content %} 
 
-    <div class="uk-container uk-container-expand">
+    <div>
         <h1 class="uk-heading-small">Connexion à votre compte</h1>
     </div>
 
-    <form method="post" class="connexion-form">
+    <div>
 
-        <div class="uk-container uk-container-xsmall">
-            <label for="username">Nom d'utilisateur</label>
-            <input type="text" name="username" class="">
-        </div>
+        <form method="post" class="connexion-form">
 
-        <div class="uk-container-xsmall">
-            <label for="password">Mot de passe</label>
-            <input type="text" name="password" class="">
-        </div>
+            <div class="connexion-label-input">
+                <label for="username" class="connexion-label">Nom d'utilisateur</label>
+                <input type="text" name="username" class="connexion-champ uk-form-width-large">
+            </div>
 
-        <div class="uk-container-xsmall">
-            <button class="uk-button-large">Connexion</button>
-        </div>
+            <div class="connexion-label-input">
+                <label for="password" class="connexion-label">Mot de passe</label>
+                <input type="text" name="password" class="connexion-champ uk-form-width-large">
+            </div>
 
-    </form> 
+            <div class="button-connexion-form">
+                <button class="uk-button-large">Connexion</button>
+            </div>
+        
+        </form> 
+
+    </div>
 
     
 {% endblock %}
