@@ -1,7 +1,6 @@
-
-.titre-resa {
+.titre-resa-form{
 text-align: center;
-font-size: 1rem;
+font-size: 2rem;
 color:var (--dark);
 font-family: var(--title-font);
 }
@@ -11,40 +10,76 @@ font-family: var(--title-font);
     font-family:var(--main-font);
     background-color: var( --main-color);
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sv-margin {
+    margin:20px;
 }
 
 .form-resa input {
-    border-radius: 10px;
+    border-radius: 20px;
     font-family: var( --main-font);
+    width: 50%;
+    height: 30px;
+    border: none;
+    box-shadow: var(--box-shadow);
 }
 
+.titre-choix-menu {
+    padding-bottom: var(--padding); 
+}
 
 .choix-menu select {
-    border-radius: 10px;
+    border-radius: 20px;
     font-family: var( --main-font);
+    width: 200px;
+    height: 30px;
+    border: none;
+    box-shadow: var(--box-shadow);
+}
+
+.usermessage label {
+    padding-bottom: var(--padding); 
 }
 
 .usermessage textarea {
     border-radius: 20px;
+    width: 500px;
+    height: 110px;
+    border: none;
+    box-shadow: var(--box-shadow);
 }
 
 .colonne1 {
-    display:block;
     justify-content: center;
     width: 50%;
-    justify-content: center;
-    justify-content: space-around;
     align-items: center;
 }
 
 .colonne2 {
     display: flex;
-    flex-wrap: wrap;
+    padding-bottom: calc(var(--padding)*2);
 }
 
+.date-resa {
+    padding-left: calc(var(--padding)*3);
+}
+
+.date-resa-text {
+    padding-bottom: var(--padding); 
+}
+
+.date-resa input{
+   width: 200px;
+}
 
 .uk-container {
     text-align: center;
 }
 
+.uk-button-large:hover  {
+    box-shadow: var(--box-shadow);
+}
 
