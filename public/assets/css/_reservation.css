@@ -1,0 +1,54 @@
+
+.titre-resa {
+text-align: center;
+font-size: 10px;
+color:var (--dark);
+font-family: var(--title-font);
+}
+
+.champs-form {
+    color: white;
+    font-family:var(--main-font);
+    background-color: var( --main-color);
+    display: flex;
+}
+
+.form-resa input {
+    border-radius: 10px;
+    font-family: var( --main-font);
+}
+
+.col1 {
+justify-content: left;
+}
+
+.colonne2 {
+    display: flex;
+    justify-content: right;
+}
+
+.choix-menu {
+    justify-content: center;
+}
+
+.choix-menu select {
+    border-radius: 10px;
+    font-family: var( --main-font);
+}
+
+
+.usermessage {
+    grid-template-areas: 50%;
+    justify-content: right;
+}
+
+.usermessage textarea {
+    border-radius: 20px;
+
+}
+
+.uk-container {
+    text-align: center;
+}
+
+
