@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Page de connexion{% endblock %}
+
+{% block content %} 
+
+    <div class="uk-container uk-container-expand">
+        <h1 class="uk-heading-small">Connexion à votre compte</h1>
+    </div>
+
+    <form method="post" class="connexion-form">
+
+        <div class="uk-container uk-container-xsmall">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" name="username" class="">
+        </div>
+
+        <div class="uk-container-xsmall">
+            <label for="password">Mot de passe</label>
+            <input type="text" name="password" class="">
+        </div>
+
+        <div class="uk-container-xsmall">
+            <button class="uk-button-large">Connexion</button>
+        </div>
+
+    </form> 
+
+    
+{% endblock %}
