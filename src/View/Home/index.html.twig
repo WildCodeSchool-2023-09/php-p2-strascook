@@ -1,18 +1,31 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}Page d'accueil Strascook{% endblock %}
+
 {% block stylesheet %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+<link rel="stylesheet" href="/assets/css/_accueil.css">
 {% endblock %}
 
 {% block content %}
+
+<div class="uk-container uk-container-expand">
+  <h1 class="uk-heading-small">Votre expérience chef à domicile pour toutes vos occasions</h1>
+</div>
 <!-- Swiper -->
 <div class="swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide">Resize me 1!</div>
-    <div class="swiper-slide">Resize me 2!</div>
-    <div class="swiper-slide">Resize me 3!</div>
-    <div class="swiper-slide">Resize me 4!</div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/agneau-rond.png" rel="assiette d'une côte d'agneau" height="350" width="350"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/aubergine-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/bowlvegan-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/curry-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/pastamoules-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/pastaparmesan-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/pastatomate-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/ramen-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/saladecesar-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/saladevegan-rond.png"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/sushi-rond.png"/></div>
 
   </div>
   <div class="swiper-button-next"></div>
@@ -20,8 +33,11 @@
 </div>
 
 <div class="uk-container">
-  <p>Strascook est né de l'envie du chef Strasbourgeois Yavuz Kutuk de vous faire vivre une expérience culinaire exceptionnelle à domicile. 
-    <br><br>La qualité d'un repas gatronomique dans l'intimité de votre chez vous, pour un moment privilégié et hors du temps.</p>
+  <p>Strascook est né de l'envie du chef Strasbourgeois Yavuz Kutuk de vous faire vivre une expérience culinaire
+    exceptionnelle à domicile.
+    <br><br>La qualité d'un repas gatronomique dans l'intimité de votre chez vous, pour un moment privilégié et hors du
+    temps.
+  </p>
 </div>
 
 <div class="uk-container">
@@ -35,8 +51,7 @@
 <!-- Initialize Swiper -->
 <script>
   var swiper = new Swiper('.swiper', {
-    slidesPerView: 3,
-    direction: getDirection(),
+    slidesPerView: 1,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -46,18 +61,26 @@
       disableOnInteraction: false,
     },
     loop: true,
-    on: {
-      resize: function () {
-        swiper.changeDirection(getDirection());
-      },
-    },
+    breakpoints: {
+        430: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      }
   });
 
-  function getDirection() {
-    var windowWidth = window.innerWidth;
-    var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
-
-    return direction;
-  }
+  
 </script>
 {% endblock %}
