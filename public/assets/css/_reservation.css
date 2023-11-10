@@ -75,6 +75,10 @@ font-family: var(--title-font);
    width: 200px;
 }
 
+.usermessage-text {
+    padding-bottom: var(--padding); 
+}
+
 .uk-container {
     text-align: center;
 }
