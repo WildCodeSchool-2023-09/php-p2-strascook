@@ -1,0 +1,55 @@
+.swiper {
+    width: 100%;
+    height: 500px;
+    background-color: var(--main-color);
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.uk-container {
+    padding-top: calc(var(--padding)*4);
+    font-size: calc(var(--font-size)*2);
+    text-align: center;
+}
+
+.uk-button-large {
+    background-color: var(--accent-color);
+    border: none;
+    font-family: var(--main-font);
+    font-size: calc(var(--font-size)*1.5);
+    border-radius: 35px;
+}
+
+.uk-heading-small {
+    font-family: var(--title-font);
+    padding-bottom: calc(var(--padding)*4);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--soft-dark);
+}
+
+@media screen and (max-width: 430px) {
+    .uk-heading-medium {
+        font-size: xx-large;
+    }
+
+    .uk-container {
+        font-size: large;
+    }
+}

@@ -1,11 +1,15 @@
-:root {
-    --main-color: #8B0901;
-    --dark: black;
-    --accent-color: #D9B114;
-    --soft-dark: #4A4A4A;
-    --main-font: 'livvic';
-    --title-font: 'noto-serif';
-    --padding: 1rem;
-    --margin: 1rem;
+@import url('_reservation.css');
+@import url('_accueil.css');
+@import url('_footer.css');
+@import url('_variables.css');
+@import url('_contact.css');
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@100&family=Noto+Serif:wght@300&display=swap');
 
+.uk-button-large {
+    background-color: var(--accent-color);
+    border: none;
+    font-family: var(--main-font);
+    font-size: calc(var(--font-size)*1.5);
+    border-radius: 10px;
+    color: var(--dark);
 }

@@ -6,9 +6,9 @@ use App\Controller\AbstractController;
 
 class MentionlegalesController extends AbstractController
 {
-    public function add()
+    public function index()
     {
 
-        return $this->twig->render('mentionslegales/add.html.twig');
+        return $this->twig->render('Mentionslegales/index.html.twig');
     }
 }
