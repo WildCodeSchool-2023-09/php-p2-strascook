@@ -13,7 +13,9 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'mentionslegales' => ['MentionslegalesController', 'index',],
+    'contact' => ['ContactController', 'index',],
+    'reservation' => ['ReservationController', 'index',],
     'connexion' => ['ConnexionController', 'index'],
     'inscription' => ['InscriptionController', 'index'],
-    'reservation' => ['ReservationController', 'index'],
 ];
