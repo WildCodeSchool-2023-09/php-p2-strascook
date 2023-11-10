@@ -9,16 +9,19 @@
 		<title>
 			{% block title %}{% endblock %}
 		</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/css/uikit.min.css"/>
 
+		<!-- UIkit CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/css/uikit.min.css"/>
 		<link rel="stylesheet" href="/assets/css/style.css"> {% block stylesheet %}{% endblock %}
 		</head>
 
 		<body>
 			{% block content %}{% endblock %}
 
+			<!-- UIkit JS -->
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit-icons.min.js"></script>
 			<script src="uikit/dist/js/uikit-icons.min.js"></script>
+			{% block javascript %}{% endblock %}
 		</body>
 	</html>
