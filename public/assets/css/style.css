@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
     --main-color: #8B0901;
     --dark: black;
@@ -9,3 +10,13 @@
     --margin: 1rem;
 
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@100&family=Noto+Serif:wght@300&display=swap');
+@import url('_variables.css');
+@import url('_reservation.css');
+@import url('_accueil.css');
+@import url('_footer.css');
+@import url('_contact.css');
+@import url('_connexion.css');
+@import url('_global.css');
+>>>>>>> 13ba31f0a13af859e567df1cbca7defc4c464d72
