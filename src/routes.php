@@ -16,9 +16,9 @@ return [
 
     'accueil' => ['AccueilController', 'index',],
     'menus' => ['MenusController', 'index',],
-    'reservation' => ['ReservationController', 'index',],
-    'connexion' => ['ConnexionController', 'index',],
+    'mentionslegales' => ['MentionslegalesController', 'index',],
     'contact' => ['ContactController', 'index',],
-    'inscription' => ['InscriptionController', 'index',],
-
+    'reservation' => ['ReservationController', 'index',],
+    'connexion' => ['ConnexionController', 'index'],
+    'inscription' => ['InscriptionController', 'index'],
 ];

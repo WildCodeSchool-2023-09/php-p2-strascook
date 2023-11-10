@@ -1,10 +1,85 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}Page d'accueil Strascook{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{% endblock %}
+
 {% block content %}
-    <h1>Hello Wilder !</h1>
 
-    <p>Je vous propose de copier à la fin du projet le contenu de la page accueil ici<p>
-    <p>Ceci afin de ne pas casser le model MVC de base dont nous pourrions avoir besoin pour reference.<p>
+<div class="uk-container uk-container-expand">
+  <h1 class="uk-heading-small">Votre expérience chef à domicile pour toutes vos occasions</h1>
+</div>
+<!-- Swiper -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="/assets/images/carousel/agneau-rond.png" alt="assiette d'une côte d'agneau"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/aubergine-rond.png" alt="assiette d'une aubergine grillée"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/bowlvegan-rond.png" alt="assiette d'un bowl vegan"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/curry-rond.png" alt="assiette dun curry"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/pastamoules-rond.png" alt="assiette de pâtes aux moules"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/pastaparmesan-rond.png" alt="assiette de pâtes au parmesan"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/pastatomate-rond.png" alt="assitte de pâtes aux tomates cerises"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/ramen-rond.png" alt="assiette de ramen"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/saladecesar-rond.png" alt="assiette d'une salade cesar"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/saladevegan-rond.png" alt="assiette d'une salade vegan"/></div>
+    <div class="swiper-slide"><img src="/assets/images/carousel/sushi-rond.png" alt="plat de sushi"/></div>
 
-    <p>Find a complete CRUD example on <a href="/items">/items</a> page.</p>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<div class="uk-container">
+  <p>Strascook est né de l'envie du chef Strasbourgeois Yavuz Kutuk de vous faire vivre une expérience culinaire
+    exceptionnelle à domicile.
+    <br><br>La qualité d'un repas gatronomique dans l'intimité de votre chez vous, pour un moment privilégié et hors du
+    temps.
+  </p>
+</div>
+
+<div class="uk-container">
+  <a href='/reservation'><button class="uk-button-large">Réservation</button></a>
+</div>
+{% endblock %}
+
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    breakpoints: {
+        430: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      }
+  });
+
+  
+</script>
 {% endblock %}

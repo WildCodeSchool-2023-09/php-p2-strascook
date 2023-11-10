@@ -1,0 +1,21 @@
+.uk-button-large {
+    background-color: var(--accent-color);
+    border: none;
+    font-family: var(--main-font);
+    font-size: calc(var(--font-size)*1.5);
+    border-radius: 35px;
+    justify-content: center;
+    color: var(--dark);
+}
+
+.uk-button-large:hover {
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.uk-heading-small {
+    text-align: center;
+    font-family: var(--title-font);
+    padding-bottom: calc(var(--padding)*4);
+    padding-top: calc(var(--padding)*4);
+}

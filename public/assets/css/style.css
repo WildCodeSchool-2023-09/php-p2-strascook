@@ -1,18 +1,9 @@
-:root {
-    --main-color: #8B0901;
-    --dark: black;
-    --accent-color: #D9B114;
-    --soft-dark: #4A4A4A;
-    --main-font: 'livvic';
-    --title-font: 'noto-serif';
-    --padding: 1rem;
-    --margin: 1rem;
-
-}
-
-nav {
-    background-color: rgb(255, 255, 255) !important;
-        padding: 8px;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@100&family=Noto+Serif:wght@300&display=swap');
+@import url('_variables.css');
+@import url('_reservation.css');
+@import url('_accueil.css');
+@import url('_footer.css');
+@import url('_contact.css');
+@import url('_connexion.css');
+@import url('_global.css');
+@import url('_cards.css');

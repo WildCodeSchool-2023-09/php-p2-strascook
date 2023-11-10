@@ -8,11 +8,10 @@
 
     <title>{% block title %}{% endblock %}</title>
 
-    <link href="https://fonts.cdnfonts.com/css/livvic" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/noto-serif" rel="stylesheet">
+    <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/css/uikit.min.css" />
     <link rel="stylesheet" href="/assets/css/style.css">
-    {% block stylesheet %}{% endblock %}
+	{% block stylesheet %}{% endblock %}
 </head>
 
     <body>
@@ -21,10 +20,11 @@
         {% block content %}{% endblock %}
         {% block javascript %}{% endblock %}
 
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
+    <!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
         <script src="/js/script.js" ></script>
-    </body>
+{% include '/layout/_footer.html.twig' %}
+</body>
 </html>
-
 
