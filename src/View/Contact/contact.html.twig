@@ -1,0 +1,55 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}<link rel="stylesheet" href="./assets/css/_contact.css">
+{% endblock %}
+
+{% block content %}
+<img src="assets/images/food3.jpg" alt="food" width=100%>
+
+	<div class="uk-child-width-expand@s" uk-grid>
+		<div class="uk-grid-item-match">
+			<div class="uk-card uk-card-default uk-card-body">
+				<h1>Contactez nous</h1>
+				N’hésitez pas à nous contacter si vous avez des questions ou des demandes spécifiques, 
+																	nous nous ferons une joie de vous répondre dans les meilleurs délais.<br>
+				Pour une réponse rapide vous pouvez nous contacter par téléphone au 0601020304.<br>
+
+				<span>Dès réception de votre message, si besoin, nous vous contacterons par mail ou par téléphone. A bientôt !</span>
+				<h3>StrasCook</h3>
+				<p><span uk-icon="location"></span> Remote Avenue 67000 STRASBOURG
+					<br>
+					<span uk-icon="receiver"></span> 0601020304
+                    <br>
+                    <span uk-icon="mail"></span> StrasCook@gmail.com</p>
+			</div>
+		</div>
+
+		<div class="uk-container">
+			<form class="uk-grid-medium uk-grid" method="POST">
+				<div class="uk-width-1-2@s">
+                <label> Nom</label>
+					<input class="uk-input" name="nom" type="text" placeholder="Votre Nom" aria-label="100" required>
+				</div>
+				<div class="uk-width-1-2@s">
+                <label> Prénom</label>
+					<input class="uk-input" name="prénom" type="text" placeholder="Votre Prénom" aria-label="50" required>
+				</div>
+				<div class="uk-width-1-2@s">
+                <label> E-mail</label>
+					<input class="uk-input" name="email" type="text" placeholder="Votre Email" aria-label="25" required>
+				</div>
+				<div class="uk-width-1-2@s">
+                <label> Téléphone</label>
+					<input class="uk-input" name="téléphone" type="text" placeholder="Votre numéro de téléphone" aria-label="25" required>
+				</div>
+				<div class="uk-width-1-1@s">
+                <label> Message</label>
+					<textarea class="uk-input" name="message" id="message" type="text" placeholder="Votre Message" aria-label="50" rows="30" required></textarea>
+				</div>
+				<div class="uk-width-1-2@s">
+					<button class="uk-button uk-button-default" type="submit">Envoyer</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

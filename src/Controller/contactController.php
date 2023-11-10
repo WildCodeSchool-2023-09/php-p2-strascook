@@ -6,9 +6,9 @@ use App\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
-    public function add()
+    public function index()
     {
 
-        return $this->twig->render('contact/add.html.twig');
+        return $this->twig->render('Contact/contact.html.twig');
     }
 }
