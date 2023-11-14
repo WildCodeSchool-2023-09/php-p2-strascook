@@ -16,6 +16,7 @@ return [
     'mentionslegales' => ['MentionslegalesController', 'index',],
     'contact' => ['ContactController', 'index',],
     'reservation' => ['ReservationController', 'index',],
-    'connexion' => ['ConnexionController', 'index'],
+    'connexion' => ['ConnexionController', 'login'],
+    'logout' => ['ConnexionController', 'logout',],
     'inscription' => ['InscriptionController', 'index'],
 ];
