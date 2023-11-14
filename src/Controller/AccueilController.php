@@ -4,10 +4,10 @@ namespace App\Controller;
 
 use App\Controller\AbstractController;
 
-class ContactController extends AbstractController
+class AccueilController extends AbstractController
 {
     public function index()
     {
-        return $this->twig->render('contact/contact.html.twig');
+        return $this->twig->render('accueil/accueil.html.twig');
     }
 }
