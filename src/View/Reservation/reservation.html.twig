@@ -2,8 +2,9 @@
 
 
 {% block content %}
+
 	<div class="titre-resa">
-		<h1>Réservez votre expérience</h1>
+		<h1 class="titre-resa-form">Réservez votre expérience</h1>
 	</div>
 
 	<div class="form-resa">
@@ -12,30 +13,32 @@
 			<div class="champs-form">
 
 				<div class="colonne1">
-
-					<label for="text">Vos coordonnées</label>
-
-					<div>
+					<div class="sv-margin">
+						<label for="text">
+							<span uk-icon="user"></span>
+							Vos coordonnées :</label>
+					</div>
+					<div class="sv-margin">
 						<input type="text" name="name" placeholder="Votre nom">
 					</div>
 
-					<div>
+					<div class="sv-margin">
 						<input type="text" name="prenom" placeholder="Votre prénom">
 					</div>
 
-					<div>
+					<div class="sv-margin">
 						<input type="text" name="adresse1" placeholder="Votre adresse 1">
 					</div>
 
-					<div>
+					<div class="sv-margin">
 						<input type="text" name="adresse2" placeholder="Votre adresse 2">
 					</div>
 
-					<div>
+					<div class="sv-margin">
 						<input type="text" name="telephone" placeholder="Votre numéro de téléphone">
 					</div>
 
-					<div>
+					<div class="sv-margin email">
 						<input type="email" name="mail" placeholder="Votre adresse email">
 					</div>
 
@@ -46,47 +49,84 @@
 
 					<div class="colonne2">
 
-						<div class="menu-date">
-							<div class="choix-menu">
-								<div>
-									<label for="text">Votre choix de menu:</label>
-								</div>
-								<select name="choix">
-									<option value="début">Veuillez sélectionner votre choix</option>
-									<option value="Menu1">Menu Soirée Fastfood</option>
-									<option value="Menu2">Menu Soirée Asiatique</option>
-									<option value="Menu3">Menu Soirée Moléculaire</option>
-									<option value="Menu4">Menu Soirée Végan</option>
-									<option value="Menu5">Menu Soirée Gastronomique</option>
-									<option value="Menu6">Menu Soirée Strasbourgeoise</option>
-								</select>
+						<div class="choix-menu">
+
+							<div class="titre-choix-menu">
+								<label for="text">
+									<span uk-icon="bag"></span>
+									Votre choix de menu :</label>
 							</div>
-							<div class="date-resa">
-								<div>
-									<label for="text">La date de votre soirée:</label>
-								</div>
-								<input type="date" name="date">
-							</div>
+
+							<select name="choix">
+								<option value="début">Veuillez sélectionner votre choix</option>
+								<option value="Menu1">Menu Soirée Fastfood</option>
+								<option value="Menu2">Menu Soirée Asiatique</option>
+								<option value="Menu3">Menu Soirée Moléculaire</option>
+								<option value="Menu4">Menu Soirée Végan</option>
+								<option value="Menu5">Menu Soirée Gastronomique</option>
+								<option value="Menu6">Menu Soirée Strasbourgeoise</option>
+							</select>
+
 						</div>
+
+
+						<div class="person-resa">
+
+							<div class="titre-person-resa">
+								<label for="text">
+									<span uk-icon="users"></span>
+									Nombre de personnes :</label>
+							</div>
+
+							<select name="count-person">
+								<option value="début">Veuillez sélectionner le nombre de personnes :</option>
+								<option value="number1">1</option>
+								<option value="number2">2</option>
+								<option value="number3">3</option>
+								<option value="number4">4</option>
+								<option value="number5">5</option>
+								<option value="number6">6</option>
+								<option value="number7">7</option>
+								<option value="number8">8</option>
+								<option value="number9">9</option>
+								<option value="number10">10</option>
+							</select>
+
+						</div>
+
+
+						<div class="date-resa">
+							<div class="date-resa-text">
+								<label for="text">
+									<span uk-icon="calendar"></span>
+									La date de votre soirée :</label>
+							</div>
+							<input type="date" name="date">
+						</div>
+
 					</div>
 
 
 					<div class="usermessage">
-						<div>
-							<label for="text">Remarques particulières:</label>
+
+
+						<label for="text">
+							<div class="usermessage-text">
+								<span uk-icon="comment"></span>
+								Remarques particulières :</label>
 						</div>
-						<textarea name="usermessage" rows="4" cols="10" maxlenght="300"></textarea>
-						<div></div>
-
-
+						<textarea name="usermessage" rows="4" cols="20" maxlenght="500"></textarea>
 					</div>
 
-					<div class="uk-container">
-						<button class="uk-button-large">Réservez</button>
-					</div>
-
-
-				</form>
+				</div>
 			</div>
 
-		{% endblock %}
+			<div class="uk-container sv-margin">
+				<button class="uk-button-large">Réservez</button>
+			</div>
+
+
+		</form>
+	</div>
+
+{% endblock %}
