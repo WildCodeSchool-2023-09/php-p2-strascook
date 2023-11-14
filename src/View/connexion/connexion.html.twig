@@ -1,5 +1,34 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}Page de connexion{% endblock %}
+
 {% block content %} 
-C'est ici que va le code de la page Connexion. 
+
+    <div>
+        <h1 class="uk-heading-small">Connexion à votre compte</h1>
+    </div>
+
+    <div>
+
+        <form method="post" class="connexion-form">
+
+            <div class="connexion-label-input">
+                <label for="username" class="connexion-label">Nom d'utilisateur</label>
+                <input type="text" name="username" class="connexion-champ uk-form-width-large" required>
+            </div>
+
+            <div class="connexion-label-input">
+                <label for="password" class="connexion-label">Mot de passe</label>
+                <input type="text" name="password" class="connexion-champ uk-form-width-large" required>
+            </div>
+
+            <div class="button-connexion-form">
+                <button class="uk-button-large">Connexion</button>
+            </div>
+        
+        </form> 
+
+    </div>
+
+    
 {% endblock %}

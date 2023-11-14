@@ -3,44 +3,44 @@ footer {
 }
 
 footer * {
-color: white !important;
+    color: white !important;
 
 }
 
 
 /*Media Query*/
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
 
-    .uk-navbar-left{
+    .uk-navbar-left {
         display: flex;
         flex-direction: column;
     }
-    
 
-    .uk-navbar-right{
+
+    .uk-navbar-right {
         display: flex;
-        
-    
+
+
     }
 }
 
-@media screen and (max-width: 490px){
+@media screen and (max-width: 490px) {
 
-    .uk-navbar-left{
+    .uk-navbar-left {
         display: flex;
         flex-direction: column;
     }
-    
+
     p {
-        text-align:center;
+        text-align: center;
 
     }
 
-    .uk-navbar-right{
+    .uk-navbar-right {
         display: flex;
         flex-direction: column;
-        justify-content: first baseline ;
+        justify-content: first baseline;
 
     }
 }
