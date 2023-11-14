@@ -1,32 +1,33 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/favicon.png">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="/assets/images/favicon.png">
 
-    <title>{% block title %}{% endblock %}</title>
-
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+    
     <link href="https://fonts.cdnfonts.com/css/livvic" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/noto-serif" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/css/uikit.min.css" />
     <link rel="stylesheet" href="/assets/css/style.css">
-
+    
     {% block stylesheet %}{% endblock %}
+		</head>
+    
+		<body>
+     {% include '/layouts/_navbar.html.twig' %}
+			{% block content %}{% endblock %}
 
-</head>
+			{% block javascript %}{% endblock %}
 
-    <body>
-        {% include '/layouts/_navbar.html.twig' %}
-
-        {% block content %}{% endblock %}
-        {% block javascript %}{% endblock %}
-
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.6/dist/js/uikit-icons.min.js"></script>
-        <script src="/js/script.js" ></script>
-    </body>
-</html>
-
-
+			<!-- UIkit JS -->
+			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.8/dist/js/uikit-icons.min.js"></script>
+      
+			{% include '/layout/_footer.html.twig' %}
+		</body>
+	</html>
