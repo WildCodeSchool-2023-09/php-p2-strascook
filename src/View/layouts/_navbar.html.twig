@@ -1,0 +1,11 @@
+{# Include des 2 navbar (_navmedium [medium resolution] et _navsmall [small resolution]) #}
+{# uk-visible@m : rend la navbar medium visible pour les résolution medium. '@m' pour medium. #}
+{# uk-hidden@m : cache la navbar small pour les résolution medium. '@m' pour medium. #}
+
+<div class = "uk-visible@m">
+    {% include "layouts/_navmedium.html.twig" %}
+</div>
+
+<div class = "uk-hidden@m">
+    {% include "layouts/_navsmall.html.twig" %}
+</div>
