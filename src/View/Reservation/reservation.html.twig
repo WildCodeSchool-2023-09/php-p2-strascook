@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="form-resa">
-		<form action="\" method="POST">
+		<form method="POST">
 			<div class="champs-form">
 
 				<div class="colonne1">
@@ -18,27 +18,22 @@
 							Vos coordonnées :</label>
 					</div>
 					<div class="sv-margin">
-						<input type="text" name="name" placeholder="Votre nom">
+						<input type="text" name="nom" disabled value="{{ user.id }}">{{ user.nom }}
+					</div>
+					<div class="sv-margin">
+						<input type="text" name="prenom" disabled value="{{ user.id }}">{{ user.prenom }}
 					</div>
 
 					<div class="sv-margin">
-						<input type="text" name="prenom" placeholder="Votre prénom">
+						<input type="text" name="adresse" disabled value="{{ user.id }}">{{ user.adresse }}
 					</div>
 
 					<div class="sv-margin">
-						<input type="text" name="adresse1" placeholder="Votre adresse 1">
-					</div>
-
-					<div class="sv-margin">
-						<input type="text" name="adresse2" placeholder="Votre adresse 2">
-					</div>
-
-					<div class="sv-margin">
-						<input type="text" name="telephone" placeholder="Votre numéro de téléphone">
+						<input type="text" name="telephone" disabled value="{{ user.id }}">{{ user.telephone }}
 					</div>
 
 					<div class="sv-margin email">
-						<input type="email" name="mail" placeholder="Votre adresse email">
+						<input type="email" name="mail" disabled value="{{ user.id }}">{{ user.mail }}
 					</div>
 
 				</div>
@@ -56,12 +51,9 @@
 
 							<select name="choix">
 								<option value="début">Veuillez sélectionner votre choix</option>
-								<option value="Menu1">Menu Soirée Fastfood</option>
-								<option value="Menu2">Menu Soirée Asiatique</option>
-								<option value="Menu3">Menu Soirée Moléculaire</option>
-								<option value="Menu4">Menu Soirée Végan</option>
-								<option value="Menu5">Menu Soirée Gastronomique</option>
-								<option value="Menu6">Menu Soirée Strasbourgeoise</option>
+								{% for menu in menus %}
+									<option value="{{ menu.id }}">{{ menu.nom }}</option>
+								{% endfor %}
 							</select>
 
 						</div>
@@ -77,6 +69,7 @@
 
 							<select name="count-person">
 								<option value="début">Veuillez sélectionner le nombre de personnes :</option>
+								{{ errors.count-person }}
 								<option value="number1">1</option>
 								<option value="number2">2</option>
 								<option value="number3">3</option>

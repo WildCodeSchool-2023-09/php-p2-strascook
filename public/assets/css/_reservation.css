@@ -18,6 +18,10 @@
     justify-content: center;
 }
 
+::placeholder {
+    color: white;
+}
+
 .sv-margin {
     margin: 0.5rem;
 }
@@ -91,11 +95,6 @@
     padding-bottom: var(--padding);
 }
 
-/*
-    .date-resa {
-        padding-left: calc(var(--padding)*3);
-    }
-    */
 
 .date-resa-text {
     padding-bottom: var(--padding);
