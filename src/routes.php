@@ -21,4 +21,6 @@ return [
     'contact' => ['ContactController', 'index',],
     'inscription' => ['InscriptionController', 'index',],
     'mentionslegales' => ['MentionslegalesController', 'index',],
+    'Admin/menus/dash' => ['MenusAdmController', 'index',],
+    'Admin/menus/new' => ['MenusAdmController', 'add',],
 ];
