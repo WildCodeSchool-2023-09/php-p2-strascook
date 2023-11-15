@@ -8,6 +8,6 @@ class ContactController extends AbstractController
 {
     public function index()
     {
-        return $this->twig->render('Contact/contact.html.twig');
+        return $this->twig->render('contact/contact.html.twig');
     }
 }

@@ -20,5 +20,5 @@ return [
     'logout' => ['ConnexionController', 'logout',],
     'contact' => ['ContactController', 'index',],
     'inscription' => ['InscriptionController', 'index',],
-    'mentionslegales' => ['MentionslegalesController', 'index',],
+    'mentionslegales' => ['MentionsLegalesController', 'index',],
 ];
