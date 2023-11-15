@@ -1,0 +1,18 @@
+/* padding de l'image du menu */
+.padding-pic {
+    padding: 2rem;
+}
+
+/* bord arrondi de l'image du menu (sert aussi à arrondir le bouton) */
+.rounded-image {
+    border-radius: 3rem; 
+}
+
+/* positionement du bouton 'prix/pers.€' en bas a droite */
+.button-position {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem; 
+    background-color: var(--accent-color);
+}
