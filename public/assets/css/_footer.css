@@ -4,7 +4,6 @@ footer {
 
 footer * {
     color: white !important;
-
 }
 
 
@@ -17,11 +16,8 @@ footer * {
         flex-direction: column;
     }
 
-
     .uk-navbar-right {
         display: flex;
-
-
     }
 }
 
@@ -34,13 +30,11 @@ footer * {
 
     p {
         text-align: center;
-
     }
 
     .uk-navbar-right {
         display: flex;
         flex-direction: column;
         justify-content: first baseline;
-
     }
 }
