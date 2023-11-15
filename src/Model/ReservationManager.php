@@ -4,15 +4,18 @@ namespace App\Model;
 
 use App\Model\AbstractManager;
 use PDO;
-use App\Model\MenusAdmManager;
-
 
 class ReservationManager extends AbstractManager
 {
-    public const TABLE = "menus";
-    public function index(array $choix)
+    public const TABLE = "reservation";
+    public function insert(array $reservation)
     {
-        $query = "SELECT*FROM " . self::TABLE;
-        return $this->pdo->query($query)->fetchAll();
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " VALUES (:menus_id,:client_id, :date)");
+        $statement->bindValue('menus_id', $reservation['menus_id'], PDO::PARAM_INT);
+        $statement->bindValue('client_id', $reservation['client_id'], PDO::PARAM_INT);
+        $statement->bindValue('date', $reservation['date'], PDO::PARAM_INT);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
     }
 }

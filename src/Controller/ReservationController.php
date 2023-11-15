@@ -23,7 +23,7 @@ class ReservationController extends AbstractController
             }
             if (!$errors) {
                 $reservationManager = new ReservationManager();
-                $reservationManager->index($_POST);
+                $reservationManager->insert($_POST);
             }
         }
         $menusManager = new MenusManager();

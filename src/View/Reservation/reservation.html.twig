@@ -18,22 +18,22 @@
 							Vos coordonnées :</label>
 					</div>
 					<div class="sv-margin">
-						<input type="text" name="nom" disabled value="{{ user.id }}">{{ user.nom }}
+						<input type="text" name="nom" disabled value="{{ user.nom }}">
 					</div>
 					<div class="sv-margin">
-						<input type="text" name="prenom" disabled value="{{ user.id }}">{{ user.prenom }}
-					</div>
-
-					<div class="sv-margin">
-						<input type="text" name="adresse" disabled value="{{ user.id }}">{{ user.adresse }}
+						<input type="text" name="prenom" disabled value="{{ user.prenom }}">
 					</div>
 
 					<div class="sv-margin">
-						<input type="text" name="telephone" disabled value="{{ user.id }}">{{ user.telephone }}
+						<input type="text" name="adresse" disabled value="{{ user.adresse }}">
+					</div>
+
+					<div class="sv-margin">
+						<input type="text" name="telephone" disabled value="{{ user.telephone }}">
 					</div>
 
 					<div class="sv-margin email">
-						<input type="email" name="mail" disabled value="{{ user.id }}">{{ user.mail }}
+						<input type="email" name="mail" disabled value="{{ user.mail }}">
 					</div>
 
 				</div>
@@ -48,9 +48,9 @@
 									<span uk-icon="bag"></span>
 									Votre choix de menu :</label>
 							</div>
-
-							<select name="choix">
+							<select name="menus_id">
 								<option value="début">Veuillez sélectionner votre choix</option>
+								{{ errors.menus }}
 								{% for menu in menus %}
 									<option value="{{ menu.id }}">{{ menu.nom }}</option>
 								{% endfor %}
@@ -93,7 +93,7 @@
 							</div>
 							<input type="date" name="date">
 						</div>
-
+						{{ errors.date }}
 					</div>
 
 
