@@ -1,6 +1,6 @@
 .swiper {
     width: 100%;
-    height: 500px;
+    height: 450px;
     background-color: var(--main-color);
 }
 
@@ -10,14 +10,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
 }
 
 .swiper-slide img {
     display: block;
     width: 100%;
-    height: 85%;
+    height: 100%;
     object-fit: contain;
+    object-position: 50% 50%;
 }
 
 .uk-container {

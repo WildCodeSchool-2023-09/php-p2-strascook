@@ -13,12 +13,12 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-
     'accueil' => ['AccueilController', 'index',],
     'menus' => ['MenusController', 'index',],
-    'mentionslegales' => ['MentionslegalesController', 'index',],
-    'contact' => ['ContactController', 'index',],
     'reservation' => ['ReservationController', 'index',],
-    'connexion' => ['ConnexionController', 'index'],
-    'inscription' => ['InscriptionController', 'index'],
+    'connexion' => ['ConnexionController', 'login',],
+    'logout' => ['ConnexionController', 'logout',],
+    'contact' => ['ContactController', 'index',],
+    'inscription' => ['InscriptionController', 'index',],
+    'mentionslegales' => ['MentionslegalesController', 'index',],
 ];
