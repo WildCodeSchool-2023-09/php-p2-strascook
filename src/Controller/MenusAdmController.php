@@ -13,14 +13,13 @@ class MenusAdmController extends AbstractController
         $menusAdmManager = new MenusAdmManager();
         $allMenus = $menusAdmManager->selectAll();
         // La page se trouve dans :
-        return $this->twig->render('Admin/menus/index.html.twig',['menus' => $allMenus]);
+        return $this->twig->render('Admin/menus/index.html.twig', ['menus' => $allMenus]);
     }
 
 
-        // Ajout d'un nouveau menu
-        public function add()
-        {
-            return $this->twig->render('Admin/menus/new.html.twig');
-        }
-
+    // Ajout d'un nouveau menu
+    public function add()
+    {
+        return $this->twig->render('Admin/menus/new.html.twig');
+    }
 }
