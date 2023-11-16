@@ -20,4 +20,5 @@ return [
     'contact' => ['ContactController', 'index',],
     'inscription' => ['InscriptionController', 'index',],
     'mentionslegales' => ['MentionsLegalesController', 'index',],
+    'admin/user' => ['UserController', 'index',],
 ];
