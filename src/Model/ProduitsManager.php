@@ -11,7 +11,7 @@ class ProduitsManager extends AbstractManager
 
     public function insert(array $produit): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(nom, type, sous-type) 
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(nom, type, sous_type) 
         VALUES (:nom, :type, :sous-type)");
         $statement->bindValue('nom', $produit['nom'], PDO::PARAM_STR);
         $statement->bindValue('type', $produit['type'], PDO::PARAM_STR);
@@ -20,4 +20,34 @@ class ProduitsManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function update(array $produit)
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " 
+        SET nom=:nom, type=:type, sous_type=:sous-type WHERE id=:id");
+        $statement->bindValue('nom', $produit['nom'], PDO::PARAM_STR);
+        $statement->bindValue('type', $produit['type'], PDO::PARAM_STR);
+        $statement->bindValue('sous-type', $produit['sous-type'], PDO::PARAM_STR);
+        $statement->bindValue('id', $produit['id'], PDO::PARAM_INT);
+
+        $statement->execute();
+    }
 }
+/*
+    public function delete($id)
+    {
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . "
+        SET nom=:nom, type=:type, sous_type=:sous-type WHERE id=:id");
+        $statement->bindValue('nom', $produit['nom'], PDO::PARAM_STR);
+        $statement->bindValue('type', $produit['type'], PDO::PARAM_STR);
+        $statement->bindValue('sous-type', $produit['sous-type'], PDO::PARAM_STR);
+        $statement->bindValue('id', $produit['id'], PDO::PARAM_INT);
+
+        $statement->execute();
+    }
+
+
+$statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE id=:id");
+$statement->bindValue('id', $id, \PDO::PARAM_INT);
+$statement->execute();
+*/
