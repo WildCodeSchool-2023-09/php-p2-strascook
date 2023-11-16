@@ -5,15 +5,23 @@ namespace App\Controller;
 use App\Controller\AbstractController;
 use App\Model\ReservationManager;
 use App\Model\MenusManager;
+use App\Controller\ConnexionController;
 
 class ReservationController extends AbstractController
 {
     public function index()
     {
+        $menusManager = new MenusManager();
+        $menus = $menusManager->selectAll();
+        return $this->twig->render('Reservation/reservation.html.twig', ['menus' => $menus]);
+    }
+
+    public function add()
+    {
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if ($_POST['choix'] === '') {
-                $errors['choix'] = 'Veuillez saisir votre choix de menu';
+            if ($_POST['menu_id'] === '') {
+                $errors['menu_id'] = 'Veuillez saisir votre choix de menu';
             }
             if ($_POST['count-person'] === '') {
                 $errors['count-person'] = 'Veuillez saisir le nombre de personnes';
@@ -26,8 +34,6 @@ class ReservationController extends AbstractController
                 $reservationManager->insert($_POST);
             }
         }
-        $menusManager = new MenusManager();
-        $menus = $menusManager->selectAll();
-        return $this->twig->render('reservation/reservation.html.twig', ['errors' => $errors, 'menus' => $menus]);
+        return $this->twig->render('Reservation/reservation.html.twig', ['errors' => $errors]);
     }
 }

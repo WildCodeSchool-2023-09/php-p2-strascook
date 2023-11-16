@@ -6,117 +6,122 @@
 	<div class="titre-resa">
 		<h1 class="titre-resa-form">Réservez votre expérience</h1>
 	</div>
+	{% if session.isLogin == true %}
+		<div class="form-resa">
+			<form method="POST">
+				<div class="champs-form">
 
-	<div class="form-resa">
-		<form method="POST">
-			<div class="champs-form">
+					<div class="colonne1">
+						<div class="sv-margin">
+							<label for="text">
+								<span uk-icon="user"></span>
+								Vos coordonnées :</label>
+						</div>
+						<div class="sv-margin">
+							<input type="text" name="nom" disabled value="{{ user.nom }}">
+						</div>
+						<div class="sv-margin">
+							<input type="text" name="prenom" disabled value="{{ user.prenom }}">
+						</div>
 
-				<div class="colonne1">
-					<div class="sv-margin">
-						<label for="text">
-							<span uk-icon="user"></span>
-							Vos coordonnées :</label>
-					</div>
-					<div class="sv-margin">
-						<input type="text" name="nom" disabled value="{{ user.nom }}">
-					</div>
-					<div class="sv-margin">
-						<input type="text" name="prenom" disabled value="{{ user.prenom }}">
-					</div>
+						<div class="sv-margin">
+							<input type="text" name="adresse" disabled value="{{ user.adresse }}">
+						</div>
 
-					<div class="sv-margin">
-						<input type="text" name="adresse" disabled value="{{ user.adresse }}">
-					</div>
+						<div class="sv-margin">
+							<input type="text" name="telephone" disabled value="{{ user.telephone }}">
+						</div>
 
-					<div class="sv-margin">
-						<input type="text" name="telephone" disabled value="{{ user.telephone }}">
-					</div>
+						<div class="sv-margin email">
+							<input type="email" name="mail" disabled value="{{ user.mail }}">
+						</div>
 
-					<div class="sv-margin email">
-						<input type="email" name="mail" disabled value="{{ user.mail }}">
 					</div>
+					<div>
 
+						<div class="colonne2">
+
+							<div class="choix-menu">
+
+								<div class="titre-choix-menu">
+									<label for="text">
+										<span uk-icon="bag"></span>
+										Votre choix de menu :</label>
+								</div>
+								<select name="menus_id">
+									<option value="début">Veuillez sélectionner votre choix</option>
+									{{ errors.menus }}
+									{% for menu in menus %}
+										<option value="{{ menu.id }}">{{ menu.nom }}</option>
+									{% endfor %}
+								</select>
+
+							</div>
+
+
+							<div class="person-resa">
+
+								<div class="titre-person-resa">
+									<label for="text">
+										<span uk-icon="users"></span>
+										Nombre de personnes :</label>
+								</div>
+
+								<select name="count-person">
+									<option value="début">Veuillez sélectionner le nombre de personnes :</option>
+									{{ errors.count-person }}
+									<option value="number1">1</option>
+									<option value="number2">2</option>
+									<option value="number3">3</option>
+									<option value="number4">4</option>
+									<option value="number5">5</option>
+									<option value="number6">6</option>
+									<option value="number7">7</option>
+									<option value="number8">8</option>
+									<option value="number9">9</option>
+									<option value="number10">10</option>
+								</select>
+
+							</div>
+
+
+							<div class="date-resa">
+								<div class="date-resa-text">
+									<label for="text">
+										<span uk-icon="calendar"></span>
+										La date de votre soirée :</label>
+								</div>
+								<input type="date" name="date">
+							</div>
+							{{ errors.date }}
+						</div>
+
+
+						<div class="usermessage">
+
+
+							<label for="text">
+								<div class="usermessage-text">
+									<span uk-icon="comment"></span>
+									Remarques particulières :</label>
+							</div>
+							<textarea name="usermessage" rows="4" cols="20" maxlenght="500"></textarea>
+						</div>
+
+					</div>
 				</div>
-				<div>
 
-					<div class="colonne2">
-
-						<div class="choix-menu">
-
-							<div class="titre-choix-menu">
-								<label for="text">
-									<span uk-icon="bag"></span>
-									Votre choix de menu :</label>
-							</div>
-							<select name="menus_id">
-								<option value="début">Veuillez sélectionner votre choix</option>
-								{{ errors.menus }}
-								{% for menu in menus %}
-									<option value="{{ menu.id }}">{{ menu.nom }}</option>
-								{% endfor %}
-							</select>
-
-						</div>
-
-
-						<div class="person-resa">
-
-							<div class="titre-person-resa">
-								<label for="text">
-									<span uk-icon="users"></span>
-									Nombre de personnes :</label>
-							</div>
-
-							<select name="count-person">
-								<option value="début">Veuillez sélectionner le nombre de personnes :</option>
-								{{ errors.count-person }}
-								<option value="number1">1</option>
-								<option value="number2">2</option>
-								<option value="number3">3</option>
-								<option value="number4">4</option>
-								<option value="number5">5</option>
-								<option value="number6">6</option>
-								<option value="number7">7</option>
-								<option value="number8">8</option>
-								<option value="number9">9</option>
-								<option value="number10">10</option>
-							</select>
-
-						</div>
-
-
-						<div class="date-resa">
-							<div class="date-resa-text">
-								<label for="text">
-									<span uk-icon="calendar"></span>
-									La date de votre soirée :</label>
-							</div>
-							<input type="date" name="date">
-						</div>
-						{{ errors.date }}
-					</div>
-
-
-					<div class="usermessage">
-
-
-						<label for="text">
-							<div class="usermessage-text">
-								<span uk-icon="comment"></span>
-								Remarques particulières :</label>
-						</div>
-						<textarea name="usermessage" rows="4" cols="20" maxlenght="500"></textarea>
-					</div>
-
+				<div class="uk-container sv-margin">
+					<a href="/reservation/add">
+						<button class="uk-button-large">Réservez</button>
+					</a>
 				</div>
-			</div>
 
-			<div class="uk-container sv-margin">
-				<button class="uk-button-large">Réservez</button>
-			</div>
+			</form>
+		{% else %}
+			<p>Veuillez vous connecter</p>
+		{% endif %}
 
-
-		</form>
 	</div>
 
 {% endblock %}

@@ -15,9 +15,11 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'menus' => ['MenusController', 'index',],
     'reservation' => ['ReservationController', 'index',],
+    'reservation/add' => ['ReservationController', 'add',],
     'connexion' => ['ConnexionController', 'login',],
     'logout' => ['ConnexionController', 'logout',],
     'contact' => ['ContactController', 'index',],
     'inscription' => ['InscriptionController', 'index',],
     'mentionslegales' => ['MentionslegalesController', 'index',],
+    'produits' => ['ProduitsController', 'index'],
 ];

@@ -287,5 +287,3 @@ VALUES (
         'Votre Chef Yavuz vous fera découvrir la cuisine de son terroir, revisitée avec amour pour sa ville',
         20
     );
-
-TRUNCATE TABLE `menus`;
