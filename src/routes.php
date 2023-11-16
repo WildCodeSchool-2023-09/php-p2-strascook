@@ -21,4 +21,5 @@ return [
     'inscription' => ['InscriptionController', 'index',],
     'mentionslegales' => ['MentionsLegalesController', 'index',],
     'admin/user' => ['UserController', 'index',],
+    'admin/user/new' => ['UserController', 'new',],
 ];
