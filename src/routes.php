@@ -13,7 +13,6 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'accueil' => ['AccueilController', 'index',],
     'menus' => ['MenusController', 'index',],
     'reservation' => ['ReservationController', 'index',],
     'connexion' => ['ConnexionController', 'login',],

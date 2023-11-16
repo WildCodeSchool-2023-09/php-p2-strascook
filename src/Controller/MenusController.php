@@ -15,6 +15,6 @@ class MenusController extends AbstractController
         $menuManager = new MenusManager(); // On crée une instance de MenuManager.
         $menus = $menuManager->selectAll(); // Tous les elements du selectAll se retrouvent dans $menu.
         // On passe en parametre $menu (je ne sait pas pourquoi...)
-        return $this->twig->render('menus/menus.html.twig', ['menus' => $menus]);
+        return $this->twig->render('Menus/menus.html.twig', ['menus' => $menus]);
     }
 }
