@@ -30,6 +30,9 @@
                     {# Reservation & Contact #}
                     <div class="uk-navbar-right">
                         <ul class="uk-navbar-nav">
+                            {% if session.isAdmin == true %}
+                            <li class="uk-active"><a href="/admin/dashboard">Dashboard</a></li>
+                            {% endif %}
                             {% if session.isLogin == true %} 
                             <li class="uk-active"><a href="/logout">Déconnexion</a></li>
                             {% else %}

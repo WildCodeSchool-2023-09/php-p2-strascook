@@ -19,4 +19,10 @@ class UserManager extends AbstractManager
 
         return $statement->fetch();
     }
+
+    public function numberCustomers()
+    {
+        $statement = $this->pdo->query("SELECT * FROM " . static::TABLE . " WHERE isAdmin=false");
+        return $statement->fetchAll();
+    }
 }
