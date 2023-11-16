@@ -16,8 +16,12 @@
                             <li><a class="uk-text-large" href="/menus">Menus</a></li>
                             <li><a class="uk-text-large" href="/reservation">Reservation</a></li>   
                             <li><a class="uk-text-large" href="/contact">Contact</a></li>   
-                            <li><a class="uk-text-large" href="/connexion">Connexion</a></li>   
-                            <li><a class="uk-text-large" href="/inscription">Inscription</a></li>
+                            {% if session.isLogin == true %} 
+                            <li class="uk-active"><a href="/logout">Déconnexion</a></li>
+                            {% else %}
+                            <li class="uk-active"><a href="/connexion">Connexion</a></li>
+                            <li class="uk-active"><a href="/inscription">Inscription</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

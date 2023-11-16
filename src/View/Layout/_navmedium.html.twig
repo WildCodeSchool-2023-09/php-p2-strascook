@@ -2,7 +2,7 @@
     <nav class="uk-navbar-container">
         <div class="uk-container">
             <div uk-navbar>
-
+            
                     {# Les 3 premiers menus #}
                     <div class="uk-navbar-left">
                         <ul class="uk-navbar-nav">
@@ -30,8 +30,12 @@
                     {# Reservation & Contact #}
                     <div class="uk-navbar-right">
                         <ul class="uk-navbar-nav">
+                            {% if session.isLogin == true %} 
+                            <li class="uk-active"><a href="/logout">Déconnexion</a></li>
+                            {% else %}
                             <li class="uk-active"><a href="/connexion">Connexion</a></li>
                             <li class="uk-active"><a href="/inscription">Inscription</a></li>
+                            {% endif %}
                         </ul>
                     </div>
 
