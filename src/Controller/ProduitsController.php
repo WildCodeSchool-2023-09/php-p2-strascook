@@ -23,7 +23,7 @@ class ProduitsController extends AbstractController
             $produitsManager = new ProduitsManager();
             $produitsManager->insert($_POST);
 
-            header('Location: /Produits/produits');
+            header('Location: /produits');
         }
         return $this->twig->render('Admin/Produits/add.html.twig');
     }
