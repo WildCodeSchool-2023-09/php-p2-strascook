@@ -18,22 +18,22 @@
 								Vos coordonnées :</label>
 						</div>
 						<div class="sv-margin">
-							<input type="text" name="nom" disabled value="{{ user.nom }}">
+							<input type="text" name="nom" {{ session.nom }}>
 						</div>
 						<div class="sv-margin">
-							<input type="text" name="prenom" disabled value="{{ user.prenom }}">
-						</div>
-
-						<div class="sv-margin">
-							<input type="text" name="adresse" disabled value="{{ user.adresse }}">
+							<input type="text" name="prenom" {{ session.prenom }}>
 						</div>
 
 						<div class="sv-margin">
-							<input type="text" name="telephone" disabled value="{{ user.telephone }}">
+							<input type="text" name="adresse" {{ session.adresse }}>
+						</div>
+
+						<div class="sv-margin">
+							<input type="text" name="telephone" {{ session.telephone }}>
 						</div>
 
 						<div class="sv-margin email">
-							<input type="email" name="mail" disabled value="{{ user.mail }}">
+							<input type="email" name="mail" {{ session.mail }}>
 						</div>
 
 					</div>
