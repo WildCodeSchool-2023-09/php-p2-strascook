@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Page de connexion{% endblock %}
+
+{% block content %} 
+
+    <div>
+        <h1 class="uk-heading-small">Connexion à votre compte</h1>
+    </div>
+
+    <div>
+
+        <form method="post" class="connexion-form">
+
+            <div class="connexion-label-input">
+                <label for="username" class="connexion-label">Nom d'utilisateur</label>
+                <input type="text" name="username" class="connexion-champ uk-form-width-large" required>
+                {% if errors.username is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.username }}</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="connexion-label-input">
+                <label for="password" class="connexion-label">Mot de passe</label>
+                <input type="text" name="password" class="connexion-champ uk-form-width-large" required>
+                {% if errors.password is defined %}
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.password }}</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="button-connexion-form">
+                <button class="uk-button-large">Connexion</button>
+            </div>
+        
+        </form> 
+
+    </div>
+
+    
+{% endblock %}

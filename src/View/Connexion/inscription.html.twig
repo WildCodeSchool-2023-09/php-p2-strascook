@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Page d'inscription{% endblock %}
+
+{% block content %} 
+
+    <div>
+        <h1 class="uk-heading-small">Inscrivez-vous sur StrasCook</h1>
+    </div>
+
+    <div>
+
+        <form method="post" class="connexion-form">
+
+            <div class="connexion-label-input">
+                <label for="username" class="connexion-label">Nom d'utilisateur</label>
+                <input type="text" name="username" class="connexion-champ uk-form-width-large" required>
+            </div>
+
+            <div class="connexion-label-input">
+                <label for="email" class="connexion-label">E-mail</label>
+                <input type="text" name="email²" class="connexion-champ uk-form-width-large" required>
+            </div>
+
+            <div class="connexion-label-input">
+                <label for="password" class="connexion-label">Mot de passe</label>
+                <input type="text" name="password" class="connexion-champ uk-form-width-large" required>
+            </div>
+
+            <div class="button-connexion-form">
+                <button class="uk-button-large">Inscription</button>
+            </div>
+        
+        </form> 
+
+        <div>
+            <p class="deja-inscrit">Déjà inscrit? <a href='/connexion'>connectez-vous</a></p>
+        </div>
+
+    </div>
+
+    
+{% endblock %}
