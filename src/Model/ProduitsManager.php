@@ -12,7 +12,7 @@ class ProduitsManager extends AbstractManager
     public function insert(array $produit): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(`nom`, `type`, `sous_type`) 
-        VALUES (:nom, :type, :sous_type) where ");
+        VALUES (:nom, :type, :sous_type)");
         $statement->bindValue(':nom', $produit['nom'], PDO::PARAM_STR);
         $statement->bindValue(':type', $produit['type'], PDO::PARAM_STR);
         $statement->bindValue(':sous_type', $produit['sous-type'], PDO::PARAM_STR);
