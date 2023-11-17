@@ -1,11 +1,5 @@
 <?php
 
-// list of accessible routes of your application, add every new route here
-// key : route to match
-// values : 1. controller name
-//          2. method name
-//          3. (optional) array of query string keys to send as parameter to the method
-// e.g route '/item/edit?id=1' will execute $itemController->edit(1)
 return [
     '' => ['HomeController', 'index',],
     'items' => ['ItemController', 'index',],
@@ -22,4 +16,8 @@ return [
     'mentionslegales' => ['MentionsLegalesController', 'index',],
     'admin/user' => ['UserController', 'index',],
     'admin/user/new' => ['UserController', 'new',],
+    'produits' => ['ProduitsController', 'index'],
+    'produits/add' => ['ProduitsController', 'add'],
+    'produits/edit' => ['ProduitsController', 'edit', ['id']],
+    'produits/delete' => ['ProduitsController', 'delete', ['id']],
 ];
