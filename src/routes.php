@@ -20,6 +20,35 @@ return [
     'contact' => ['ContactController', 'index',],
     'inscription' => ['InscriptionController', 'index',],
     'mentionslegales' => ['MentionslegalesController', 'index',],
-    'admin/menus/dash' => ['MenusAdmController', 'index',],
-    'admin/menus/new' => ['MenusAdmController', 'add',],
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    'admin/menus/read' => ['MenusAdmController', 'read',],    
+    'admin/menus/create' => ['MenusAdmController', 'create',],
+    'admin/menus/update' => ['MenusAdmController', 'update', ['id']],
+    'admin/menus/delete' => ['MenusAdmController', 'delete', ['id']],
 ];
