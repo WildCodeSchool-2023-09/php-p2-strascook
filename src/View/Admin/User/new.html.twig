@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<div uk-grid>
+    <div>
+    <div class="uk-card uk-card-default uk-card-body">
+    <h3 class="uk-card-title">Nouveau Client</h3>
+
+<form method="post">
+    <fieldset class="uk-fieldset">
+
+        <div class="uk-margin">
+            <input class="uk-input" name="name" type="text" placeholder="Nom" aria-label="Input">
+            </div>
+        <div class="uk-margin">
+            <input class="uk-input" name="surname" type="text" placeholder="Prénom" aria-label="Input">
+            </div>
+        <div class="uk-margin">    
+            <input class="uk-input" name="adress" type="text" placeholder="Adresse" aria-label="Input">
+            </div>
+        <div class="uk-margin">
+            <input class="uk-input" name="phone" type="text" placeholder="Numéro de Téléphone" aria-label="Input">
+            </div>
+        <div class="uk-margin">    
+            <input class="uk-input" name="email" type="email" placeholder="E-mail" aria-label="Input">
+            </div>
+        <div class="uk-margin">    
+            <input class="uk-input" name="username" type="text" placeholder="Identifiant" aria-label="Input">
+            </div>
+        <div class="uk-margin">    
+            <input class="uk-input" name="password" type="text" placeholder="Mot de Passe" aria-label="Input">
+            </div>
+
+            <button class="uk-button uk-button-secondary uk-button-large">Envoyer</button>
+        </div>
+
+
+</form>
+
+ </div>
+    </div>
+    </div>
+    {% endblock %}

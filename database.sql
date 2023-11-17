@@ -118,3 +118,4 @@ VALUES ('KUTUK', 'Yavuz', '062356355', '15 rue du Paradis', 'yayatuktuk@yaoups.f
 
 INSERT INTO `menus` (`nom`, `description`, `prix`)
 VALUES ('Menu Soirée Fastfood', 'Du fast-food de grande qualité, pour une soirée foot en famille et entre amis',15),('Menu Soirée Asiatique', 'Succombez aux saveurs de l\'Asie le temps d\'une soirée', 15),('Menu Soirée Moléculaire', 'Immersion dans les expérimentations scientifiques au service de l\'explosion des saveurs', 40),('Menu soirée Végan', 'Envie d\'allier cuisine saine, respectueuse et de qualité, c\'est par ici!', 20),('Menu Soirée Gastronomique', 'Parfait mariage entre les saveurs et le raffinement', 40),('Menu Soirée Strasbourgeoise', 'Votre Chef Yavuz vous fera découvrir la cuisine de son terroir, revisitée avec amour pour sa ville', 20);
+
