@@ -241,26 +241,6 @@ VALUES (
     );
 
 INSERT INTO
-    `user` (
-        `nom`,
-        `prenom`,
-        `tel`,
-        `adresse`,
-        `email`,
-        `identifiant`,
-        `mot_de_passe`
-    )
-VALUES (
-        'KUTUK',
-        'Yavuz',
-        '062356355',
-        '15 rue du Paradis',
-        'yayatuktuk@yaoups.fr',
-        'yaya67000',
-        'Jaimefaireamanger67'
-    );
-
-INSERT INTO
     `menus` (`nom`, `description`, `prix`)
 VALUES (
         'Menu Soirée Fastfood',
@@ -303,6 +283,28 @@ UPDATE menus SET id=6 WHERE `id`=12;
 ALTER TABLE user ADD isAdmin BOOLEAN;
 
 ALTER TABLE menus ADD photo VARCHAR(255);
+
+INSERT INTO
+    `user` (
+        `nom`,
+        `prenom`,
+        `tel`,
+        `adresse`,
+        `email`,
+        `identifiant`,
+        `mot_de_passe`,
+        `isAdmin`
+    )
+VALUES (
+        'KUTUK',
+        'Yavuz',
+        '062356355',
+        '15 rue du Paradis',
+        'yayatuktuk@yaoups.fr',
+        'yaya67000',
+        'Jaimefaireamanger67',
+        1
+    );
 
 INSERT INTO
     user(
