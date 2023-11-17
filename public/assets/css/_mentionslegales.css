@@ -1,0 +1,12 @@
+.title {
+
+    font-family: var(--title-font);
+    color: black;
+    
+} 
+
+.uk-article {
+
+font-family: var(--main-font);
+font-size: large;
+}
