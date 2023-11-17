@@ -15,12 +15,15 @@
                             <li><a class="uk-text-large" href="/">Accueil</a></li>
                             <li><a class="uk-text-large" href="/menus">Menus</a></li>
                             <li><a class="uk-text-large" href="/reservation">Reservation</a></li>   
-                            <li><a class="uk-text-large" href="/contact">Contact</a></li>   
+                            <li><a class="uk-text-large" href="/contact">Contact</a></li>
+                            {% if session.isAdmin == true %}
+                            <li class="uk-text-largee"><a href="/admin/dashboard">Dashboard</a></li>
+                            {% endif %}   
                             {% if session.isLogin == true %} 
-                            <li class="uk-active"><a href="/logout">Déconnexion</a></li>
+                            <li class="uk-text-large"><a href="/logout">Déconnexion</a></li>
                             {% else %}
-                            <li class="uk-active"><a href="/connexion">Connexion</a></li>
-                            <li class="uk-active"><a href="/inscription">Inscription</a></li>
+                            <li class="uk-text-large"><a href="/connexion">Connexion</a></li>
+                            <li class="uk-text-large"><a href="/inscription">Inscription</a></li>
                             {% endif %}
                         </ul>
                     </div>

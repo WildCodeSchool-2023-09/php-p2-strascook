@@ -13,6 +13,7 @@ return [
     'logout' => ['ConnexionController', 'logout',],
     'contact' => ['ContactController', 'index',],
     'inscription' => ['InscriptionController', 'index',],
+    'admin/dashboard' => ['DashboardController', 'index',],
     'mentionslegales' => ['MentionsLegalesController', 'index',],
     'admin/user' => ['UserController', 'index',],
     'admin/user/new' => ['UserController', 'new',],

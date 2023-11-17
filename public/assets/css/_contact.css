@@ -1,20 +1,21 @@
 * {
     font-family: var(--main-font);
-   
+
 }
 
 .title {
-font-family: var(--title-font);
-color: white;
+    font-family: var(--title-font);
+    color: white;
 
 }
-.uk-card {
+
+.div-contact-infos {
     color: white;
     background-color: var(--main-color);
     font-size: larger;
 }
 
-.formcontact{
+.formcontact {
 
     border-radius: 20px !important;
     box-shadow: var(--box-shadow);
@@ -25,25 +26,24 @@ color: white;
 
 .label-contact {
     color: var(--soft-dark);
-    font-size:1.5rem;
-    
+    font-size: 1.5rem;
+
 }
 
-.uk-container {
+.div-contact-form {
     padding-top: 3rem;
     padding-bottom: 3rem;
     text-align: left;
-    
+
 }
 
-.uk-button-large {
+.button-submit-contact {
     margin-top: 2rem;
     margin-bottom: 5rem;
 
 }
 
 .uk-icon-button {
-margin-left: 10px;
+    margin-left: 10px;
 
 }
-    

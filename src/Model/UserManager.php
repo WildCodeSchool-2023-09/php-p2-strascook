@@ -20,6 +20,12 @@ class UserManager extends AbstractManager
         return $statement->fetch();
     }
 
+    public function numberCustomers()
+    {
+        $statement = $this->pdo->query("SELECT * FROM " . static::TABLE . " WHERE isAdmin=false");
+        return $statement->fetchAll();
+    }
+
     public function insert(array $users): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`nom`,`prenom`,`adresse`,`tel`,`email`,
