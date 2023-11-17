@@ -1,0 +1,28 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+	<div class="edit-produits">
+		<h1 class="titre-edit-produits">Modifiez les produits
+			<span uk-icon="database" class="icon-database"></span>
+		</h1>
+	</div>
+	<form method="post">
+
+		<div class="uk-margin">
+			<input class="uk-input uk-form-width-medium" type="text" name="nom" placeholder="Nom produit" value="{{ produit.nom }}" aria-label="Default">
+		</div>
+		<div class="uk-margin">
+			<input class="uk-input uk-form-width-medium" type="text" name="type" placeholder="Type produit" value="{{ produit.type }}" aria-label="Default">
+		</div>
+		<div class="uk-margin">
+			<input class="uk-input uk-form-width-medium" type="text" name="sous-type" placeholder="Sous-type produit" value="{{ produit.sous_type }}" aria-label="Default">
+		</div>
+		<div class="uk-margin">
+			<input type="hidden" name="id" value="{{ produit.id }}">
+		</div>
+		<div class="uk-container sv-margin">
+			<button class="uk-button-large">Enregistrez les modifications produit</button>
+		</div>
+	</form>
+
+{% endblock %}
