@@ -31,16 +31,17 @@ class MenusAdmController extends AbstractController
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir);
             }
-            var_dump($_FILES);
-            // Recupere le nom et le nom temporaire de l'image selectionnée
+            //var_dump($_FILES);
+            // Recupere 'le nom' et 'le nom temporaire' de la photo selectionnée.
             $photoName = $_FILES['photo']['name'];
             $photoTmpName = $_FILES['photo']['tmp_name'];
-            //Et on le déplace dans le dossier UPLOAD.
+            //Et on Uniquéfie et déplace la photo dans le dossier UPLOAD.
             $uniqueFile = time() . '_' . basename($photoName);
             move_uploaded_file($photoTmpName, $uploadDir . $uniqueFile);
             // -------------------------------------------------------------
 
-            // On interroge la BDD.
+            // On appelle la BDD pour insérer les données du formuaire.
+            // On en profite pour lui donner le nom uniquefié.
             $menusAdmManager = new MenusAdmManager();
             $menusAdmManager->insert($_POST, $uniqueFile);
             // redirection sur la 1ere page du dashboard.

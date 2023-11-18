@@ -1,11 +1,13 @@
 <?php
 
-// Le Manager (ici MenusManager) permet de faire une requete sur la BDD avant de faire
-// la boucler pour afficher les données sur les cards.
+// Le Manager (ici MenusAdmManager) permet au controlleur MenuAdmController d'interagir avec la BDD.
+// Les methodes 'update' et 'insert' servent respectivement à :
+//      -Metre à jour un item du CRUD. 
+//      -Creer un item pour le CRUD.
 
 namespace App\Model;
 
-// La classe MenusManager hérite des propriétés/methodes de AbstractManager,
+// La classe MenusAdmManager hérite des propriétés/methodes de AbstractManager,
 // nottament (selectAll, selectOneById, delete).
 class MenusAdmManager extends AbstractManager
 {
