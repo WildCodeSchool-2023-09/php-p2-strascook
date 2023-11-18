@@ -18,24 +18,23 @@
 								Vos coordonnées :</label>
 						</div>
 						<div class="sv-margin">
-							<input type="text" name="nom" {{ session.nom }}>
+							<input type="text" name="nom" {{session.nom}}>
 						</div>
 						<div class="sv-margin">
-							<input type="text" name="prenom" {{ session.prenom }}>
-						</div>
-
-						<div class="sv-margin">
-							<input type="text" name="adresse" {{ session.adresse }}>
+							<input type="text" name="prenom" disabled {{ session.prenom }}>
 						</div>
 
 						<div class="sv-margin">
-							<input type="text" name="telephone" {{ session.telephone }}>
+							<input type="text" name="adresse" disabled {{ session.adresse }}>
+						</div>
+
+						<div class="sv-margin">
+							<input type="text" name="telephone" disabled {{ session.telephone }}>
 						</div>
 
 						<div class="sv-margin email">
-							<input type="email" name="mail" {{ session.mail }}>
+							<input type="email" name="mail" disabled {{ session.mail }}>
 						</div>
-
 					</div>
 					<div>
 
@@ -53,6 +52,7 @@
 									{{ errors.menus }}
 									{% for menu in menus %}
 										<option value="{{ menu.id }}">{{ menu.nom }}</option>
+
 									{% endfor %}
 								</select>
 
