@@ -43,14 +43,11 @@ class ProduitsController extends AbstractController
     }
 
     /* Suppression produit */
-    public function delete($id)
+    public function delete(int $id)
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $produitsManager = new ProduitsManager();
-            $produitsManager->delete($id);
-
-            header('Location: /produits');
-            ;
-        }
+        $produitsManager = new ProduitsManager();
+        $produitsManager->delete($id);
+        header('Location: /produits');
+        ;
     }
 }
