@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/_cards.css" />
+{% endblock %}
+
+{% block content %} 
+
+{# Le code utilise /public/assets/css/_cards.css #}
+
+{% for menu in menus %}
+{# Rajouter uk-container uk-width-2-3 dans la div ci-dessous pour centrer #}
+{# suivi d'une autre div avec pour classe : uk-flex uk-flex-center #}
+    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+        <div class="uk-card-media-left uk-cover-container">
+            <img src="/upload/{{menu.photo}}" alt="" uk-cover class="rounded-image padding-pic">
+            <canvas width="600" height="400"></canvas>
+        </div>
+        <div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">{{menu.nom}}</h3>
+                <p>{{menu.description}}</p>
+                <div>
+                    <button class="uk-button uk-button-default rounded-image button-position">Prix/pers. {{menu.prix}} €</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
