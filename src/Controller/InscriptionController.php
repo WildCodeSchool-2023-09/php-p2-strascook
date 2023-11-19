@@ -15,22 +15,22 @@ class InscriptionController extends AbstractController
                 $errors['lastname'] = 'Veuillez renseigner le nom';
             }
             if ($_POST['firstname'] === '') {
-                $errors['firstname'] = 'Veuillez renseigner le nom';
+                $errors['firstname'] = 'Veuillez renseigner le prénom';
             }
             if ($_POST['adress'] === '') {
-                $errors['adress'] = 'Veuillez renseigner le nom';
+                $errors['adress'] = 'Veuillez renseigner l\'adresse';
             }
             if ($_POST['phone'] === '') {
-                $errors['phone'] = 'Veuillez renseigner le nom';
+                $errors['phone'] = 'Veuillez renseigner le numéro de téléphone';
             }
             if ($_POST['email'] === '') {
-                $errors['email'] = 'Veuillez renseigner le nom';
+                $errors['email'] = 'Veuillez renseigner l\'email';
             }
             if ($_POST['username'] === '') {
-                $errors['username'] = 'Veuillez renseigner le nom';
+                $errors['username'] = 'Veuillez renseigner un identifiant différent de votre nom';
             }
             if ($_POST['password'] === '') {
-                $errors['password'] = 'Veuillez renseigner le nom';
+                $errors['password'] = 'Veuillez renseigner un mot de passe';
             }
             if (!$errors) {
                 $inscriptionManager = new InscriptionManager();
@@ -39,7 +39,7 @@ class InscriptionController extends AbstractController
             }
         }
 
-        return $this->twig->render('Connexion/inscription.html.twig');
+        return $this->twig->render('Connexion/inscription.html.twig', ['errors' => $errors]);
     }
 
     public function new()
