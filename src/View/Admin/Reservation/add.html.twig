@@ -11,19 +11,40 @@
     <fieldset class="uk-fieldset">
 
         <div class="uk-margin">
-            <input class="uk-input" name="name" type="text" placeholder="client_ID" aria-label="Input">
-            </div>
+            <input class="uk-input" name="client_id" type="text" placeholder="client_ID" aria-label="Input">
+        </div>
+        {% if errors.client_id is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.client_id }}</p>
+                    </div>
+        {% endif %}
+        
         <div class="uk-margin">
-            <input class="uk-input" name="surname" type="text" placeholder="menu_ID" aria-label="Input">
-            </div>
-        <div class="uk-margin">    
-            <input class="uk-input" name="adress" type="text" placeholder="Nombre de personnes" aria-label="Input">
-            </div>
-        <div class="uk-margin">
-            <input class="uk-input" name="phone" type="text" placeholder="date" aria-label="Input">
-            </div>
+            <input class="uk-input" name="menus_id" type="text" placeholder="menu_ID" aria-label="Input">
+        </div>
+        {% if errors.menus_id is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.menus_id }}</p>
+                    </div>
+        {% endif %}
 
-            <button class="uk-button uk-button-secondary uk-button-large">Envoyer</button>
+       <!-- <div class="uk-margin">    
+            <input class="uk-input" name="nb_pers" type="text" placeholder="Nombre de personnes" aria-label="Input">
+            </div> -->
+
+        <div class="uk-margin">
+            <input class="uk-input" name="date" type="date" aria-label="Input">
+        </div>
+        {% if errors.date is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.date }}</p>
+                    </div>
+        {% endif %}
+
+            <button class="uk-button uk-button-secondary uk-button-medium">Envoyer</button>
         </div>
 
 </form>

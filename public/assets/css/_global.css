@@ -18,6 +18,16 @@ footer {
     color: var(--dark);
 }
 
+.uk-button-medium {
+    background-color: var(--accent-color);
+    border: none;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    border-radius: 35px;
+    justify-content: center;
+    color: var(--dark);
+}
+
 .uk-button-large:hover {
     box-shadow: var(--box-shadow);
     cursor: pointer;

@@ -23,4 +23,20 @@ class ReservationAdmManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+    /**
+     * Insertion en BDD des données d'ajout de réservation depuis la page administrateur
+     */
+
+    public function insert(array $reservations): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`menus_id`,`client_id`,`date`)
+         VALUES (:menus_id, :client_id, :date)");
+        $statement->bindValue('menus_id', $reservations['menus_id'], PDO::PARAM_STR);
+        $statement->bindValue('client_id', $reservations['client_id'], PDO::PARAM_STR);
+        $statement->bindValue('date', $reservations['date'], PDO::PARAM_STR);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
 }
