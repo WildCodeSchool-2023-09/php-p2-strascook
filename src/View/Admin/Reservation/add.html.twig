@@ -1,0 +1,34 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+
+<div uk-grid>
+    <div>
+    <div class="uk-card uk-card-default uk-card-body">
+    <h3 class="uk-card-title">Nouvelle Réservation</h3>
+
+<form method="post">
+    <fieldset class="uk-fieldset">
+
+        <div class="uk-margin">
+            <input class="uk-input" name="name" type="text" placeholder="client_ID" aria-label="Input">
+            </div>
+        <div class="uk-margin">
+            <input class="uk-input" name="surname" type="text" placeholder="menu_ID" aria-label="Input">
+            </div>
+        <div class="uk-margin">    
+            <input class="uk-input" name="adress" type="text" placeholder="Nombre de personnes" aria-label="Input">
+            </div>
+        <div class="uk-margin">
+            <input class="uk-input" name="phone" type="text" placeholder="date" aria-label="Input">
+            </div>
+
+            <button class="uk-button uk-button-secondary uk-button-large">Envoyer</button>
+        </div>
+
+</form>
+
+ </div>
+    </div>
+    </div>
+    {% endblock %}

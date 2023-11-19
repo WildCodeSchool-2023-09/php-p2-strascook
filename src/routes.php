@@ -21,6 +21,8 @@ return [
     'mentionslegales' => ['MentionsLegalesController', 'index',],
     'admin/user' => ['UserController', 'index',],
     'admin/user/new' => ['UserController', 'new',],
+    'admin/resa' => ['ReservationAdmController', 'index',],
+    'admin/resa/add' => ['ReservationAdmController', 'add',],
     'produits' => ['ProduitsController', 'index'],
     'produits/add' => ['ProduitsController', 'add'],
     'produits/edit' => ['ProduitsController', 'edit', ['id']],
