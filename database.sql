@@ -341,3 +341,7 @@ CREATE TABLE
         telcontact VARCHAR(15),
         messagecontact VARCHAR(500)
     );
+
+UPDATE user SET email='vinzel@gmal.com' WHERE id=3;
+
+ALTER TABLE user MODIFY adresse TEXT;
