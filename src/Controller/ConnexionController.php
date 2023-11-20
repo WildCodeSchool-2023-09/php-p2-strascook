@@ -31,12 +31,13 @@ class ConnexionController extends AbstractController
                 if ($user) {
                     $_SESSION['isLogin'] = true;
                     $_SESSION['isAdmin'] = $user['isAdmin'];
+                    $_SESSION['id'] = $user['id'];
                     $_SESSION['nom'] = $user['nom'];
                     $_SESSION['prenom'] = $user['prenom'];
                     $_SESSION['adresse'] = $user['adresse'];
                     $_SESSION['tel'] = $user['tel'];
                     $_SESSION['email'] = $user['email'];
-                    header('Location: /');
+                    /* header('Location: /');*/
                 }
             }
         }

@@ -7,6 +7,7 @@
 		<h1 class="uk-heading-small">Réservez votre expérience</h1>
 	</div>
 	{% if session.isLogin == true %}
+
 		<div class="form-resa">
 			<form method="POST">
 				<div class="champs-form">
@@ -18,22 +19,22 @@
 								Vos coordonnées :</label>
 						</div>
 						<div class="sv-margin">
-							<input type="text" name="nom" {{session.nom}}>
+							<input type="text" name="nom" value="{{ session.nom }}">
 						</div>
 						<div class="sv-margin">
-							<input type="text" name="prenom" disabled {{ session.prenom }}>
-						</div>
-
-						<div class="sv-margin">
-							<input type="text" name="adresse" disabled {{ session.adresse }}>
+							<input type="text" name="prenom" value="{{ session.prenom }}">
 						</div>
 
 						<div class="sv-margin">
-							<input type="text" name="telephone" disabled {{ session.telephone }}>
+							<input type="text" name="adresse" value="{{ session.adresse }}">
+						</div>
+
+						<div class="sv-margin">
+							<input type="text" name="tel" value="{{ session.tel }}">
 						</div>
 
 						<div class="sv-margin email">
-							<input type="email" name="mail" disabled {{ session.mail }}>
+							<input type="email" name="email" value="{{ session.email }}">
 						</div>
 					</div>
 					<div>
@@ -48,14 +49,14 @@
 										Votre choix de menu :</label>
 								</div>
 								<select name="menus_id">
-									<option value="début">Veuillez sélectionner votre choix</option>
-									{{ errors.menus }}
+									<option value="">Veuillez sélectionner votre choix</option>
 									{% for menu in menus %}
 										<option value="{{ menu.id }}">{{ menu.nom }}</option>
 
 									{% endfor %}
-								</select>
 
+								</select>
+								{{ errors.menus_id }}
 							</div>
 
 
@@ -67,35 +68,36 @@
 										Nombre de personnes :</label>
 								</div>
 
-								<select name="count-person">
-									<option value="début">Veuillez sélectionner le nombre de personnes :</option>
-									{{ errors.count-person }}
-									<option value="number1">1</option>
-									<option value="number2">2</option>
-									<option value="number3">3</option>
-									<option value="number4">4</option>
-									<option value="number5">5</option>
-									<option value="number6">6</option>
-									<option value="number7">7</option>
-									<option value="number8">8</option>
-									<option value="number9">9</option>
-									<option value="number10">10</option>
+								<select name="nombredepersonnes">
+									<option value="">Veuillez sélectionner le nombre de personnes :</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
 								</select>
-
 							</div>
+							{{ errors.nombredepersonnes }}
 
 
 							<div class="date-resa">
+
 								<div class="date-resa-text">
+
 									<label for="text">
 										<span uk-icon="calendar"></span>
 										La date de votre soirée :</label>
 								</div>
-								<input type="date" name="date">
-							</div>
-							{{ errors.date }}
-						</div>
 
+								<input type="date" name="date">
+								{{ errors.date }}
+							</div>
+						</div>
 
 						<div class="usermessage">
 
@@ -105,7 +107,7 @@
 									<span uk-icon="comment"></span>
 									Remarques particulières :</label>
 							</div>
-							<textarea name="usermessage" rows="4" cols="20" maxlenght="500"></textarea>
+							<textarea name="remarques" rows="4" cols="20" maxlenght="500"></textarea>
 						</div>
 
 					</div>
@@ -116,12 +118,9 @@
 						<button class="uk-button-large">Réservez</button>
 					</a>
 				</div>
-
 			</form>
-		{% else %}
-			<p>Veuillez vous connecter</p>
-		{% endif %}
-
-	</div>
-
-{% endblock %}
+		</div>
+	{% else %}
+		<p>Veuillez vous connecter</p>
+	{% endif %}
+</div>{% endblock %}
