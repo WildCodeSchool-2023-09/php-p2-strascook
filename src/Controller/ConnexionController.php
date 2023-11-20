@@ -30,6 +30,7 @@ class ConnexionController extends AbstractController
                 $user = $userManager->userLogin($_POST);
                 if ($user) {
                     $_SESSION['isLogin'] = true;
+                    $_SESSION['isAdmin'] = $user['isAdmin'];
                     header('Location: /');
                 }
             }
@@ -41,6 +42,7 @@ class ConnexionController extends AbstractController
     public function logout()
     {
         unset($_SESSION['isLogin']);
+        unset($_SESSION['isAdmin']);
         header('Location: /connexion');
     }
 }
