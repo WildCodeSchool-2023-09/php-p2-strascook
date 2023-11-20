@@ -27,5 +27,6 @@ return [
     'produits/add' => ['ProduitsController', 'add'],
     'produits/edit' => ['ProduitsController', 'edit', ['id']],
     'produits/delete' => ['ProduitsController', 'delete', ['id']],
+    'admin/user/edit' => ['UserController', 'edit', ['id']],
 
 ];

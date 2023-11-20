@@ -23,4 +23,13 @@ class UserController extends AbstractController
         }
         return $this->twig->render('Admin/User/new.html.twig');
     }
+
+    public function edit(int $id)
+    {
+        $userManager = new UserManager();
+
+        $user = $userManager->selectOneById($id);
+
+        return $this->twig->render('Admin/User/edit.html.twig', ['user' => $user]);
+    }
 }
