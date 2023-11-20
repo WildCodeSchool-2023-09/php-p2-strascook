@@ -4,16 +4,23 @@ namespace App\Controller;
 
 use App\Controller\AbstractController;
 use App\Model\ReservationManager;
-use App\Model\MenusManager;
 use App\Controller\ConnexionController;
 
 class ReservationController extends AbstractController
 {
     public function index()
     {
-        $menusManager = new MenusManager();
-        $menus = $menusManager->selectAll();
-        return $this->twig->render('Reservation/reservation.html.twig', ['menus' => $menus]);
+        if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] === true) {
+            $reservationManager = new ReservationManager();
+            $reservation = $reservationManager->selectAll();
+            /* $_SESSION['isAdmin'] = $user['isAdmin'];
+            $_SESSION['nom'] = $user['nom'];
+            $_SESSION['prenom'] = $user['prenom'];
+            $_SESSION['adresse'] = $user['adresse'];
+            $_SESSION['tel'] = $user['tel'];
+            $_SESSION['email'] = $user['email'];*/
+            return $this->twig->render('Reservation/reservation.html.twig', ['reservation' => $reservation]);
+        }
     }
 
     public function add()
