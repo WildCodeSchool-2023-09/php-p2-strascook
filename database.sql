@@ -327,3 +327,7 @@ VALUES (
         'vinz67',
         0
     );
+
+ALTER TABLE reservation ADD remarques VARCHAR(500);
+
+ALTER TABLE reservation ADD nombrepersonnes INT NOT NULL;
