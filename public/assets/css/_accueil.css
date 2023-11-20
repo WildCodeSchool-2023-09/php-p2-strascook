@@ -20,7 +20,7 @@
     object-position: 50% 50%;
 }
 
-.uk-container {
+.lw-div-accueil {
     padding-top: calc(var(--padding)*4);
     font-size: calc(var(--font-size)*2);
     text-align: center;
@@ -34,6 +34,10 @@
 .swiper-button-next,
 .swiper-button-prev {
     color: var(--soft-dark);
+}
+
+.button-accueil-resa {
+    padding-bottom: calc(var(--padding)*2);
 }
 
 @media screen and (max-width: 430px) {
