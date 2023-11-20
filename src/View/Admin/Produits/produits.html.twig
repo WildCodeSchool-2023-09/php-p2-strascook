@@ -12,6 +12,7 @@
 							<th>nom</th>
 							<th>type</th>
 							<th>sous-type</th>
+							<th>option</th>
 						</tr>
 					</thead>
 
@@ -39,9 +40,5 @@
 </div>{% endblock %}{% block javascript %}
 {{ parent()}}
 <script>
-	new DataTable('#example', {
-info: false,
-ordering: false,
-paging: false
-});
+	new DataTable('#example');
 </script>{% endblock %}
