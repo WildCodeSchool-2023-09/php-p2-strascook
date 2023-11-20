@@ -8,6 +8,7 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'reservation' => ['ReservationController', 'index',],
+    'reservation/add' => ['ReservationController', 'add',],
     'connexion' => ['ConnexionController', 'login',],
     'logout' => ['ConnexionController', 'logout',],
     'contact' => ['ContactController', 'index',],
