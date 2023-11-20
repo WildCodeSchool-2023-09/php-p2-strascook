@@ -327,3 +327,21 @@ VALUES (
         'vinz67',
         0
     );
+
+ALTER TABLE reservation ADD remarques VARCHAR(500);
+
+ALTER TABLE reservation ADD nombrepersonnes INT NOT NULL;
+
+CREATE TABLE
+    contact (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        nomcontact VARCHAR(50),
+        prenomcontact VARCHAR(50),
+        emailcontact VARCHAR(100),
+        telcontact VARCHAR(15),
+        messagecontact VARCHAR(500)
+    );
+
+UPDATE user SET email='vinzel@gmal.com' WHERE id=3;
+
+ALTER TABLE user MODIFY adresse TEXT;
