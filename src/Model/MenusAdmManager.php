@@ -2,7 +2,7 @@
 
 // Le Manager (ici MenusAdmManager) permet au controlleur MenuAdmController d'interagir avec la BDD.
 // Les methodes 'update' et 'insert' servent respectivement à :
-//      -Metre à jour un item du CRUD. 
+//      -Metre à jour un item du CRUD.
 //      -Creer un item pour le CRUD.
 
 namespace App\Model;
