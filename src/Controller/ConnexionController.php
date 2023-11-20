@@ -37,7 +37,7 @@ class ConnexionController extends AbstractController
                     $_SESSION['adresse'] = $user['adresse'];
                     $_SESSION['tel'] = $user['tel'];
                     $_SESSION['email'] = $user['email'];
-                    /* header('Location: /');*/
+                    header('Location: /');
                 }
             }
         }

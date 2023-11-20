@@ -6,13 +6,13 @@
 			<div class="uk-card uk-card-default uk-card-body">
 				<h3 class="uk-card-title">Vos produits</h3>
 				<a class="uk-button-large" href="/produits/add">Ajoutez un nouveau produit</a>
-				<table class="uk-table uk-table-hover uk-table-divider">
-
+				<table id="example" class="uk-table uk-table-hover uk-table-divider">
 					<thead>
 						<tr>
 							<th>nom</th>
 							<th>type</th>
 							<th>sous-type</th>
+							<th>option</th>
 						</tr>
 					</thead>
 
@@ -37,4 +37,8 @@
 			</table>
 		</div>
 	</div>
-</div>{% endblock %}
+</div>{% endblock %}{% block javascript %}
+{{ parent()}}
+<script>
+	new DataTable('#example');
+</script>{% endblock %}
