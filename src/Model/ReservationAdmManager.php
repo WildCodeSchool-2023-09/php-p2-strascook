@@ -30,11 +30,14 @@ class ReservationAdmManager extends AbstractManager
 
     public function insert(array $reservations): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`menus_id`,`client_id`,`date`)
-         VALUES (:menus_id, :client_id, :date)");
-        $statement->bindValue('menus_id', $reservations['menus_id'], PDO::PARAM_STR);
-        $statement->bindValue('client_id', $reservations['client_id'], PDO::PARAM_STR);
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
+        (`menus_id`,`client_id`,`date`, `nombrepersonnes`, `remarques`)
+         VALUES (:menus_id, :client_id, :date, :nombrepersonnes, :remarques)");
+        $statement->bindValue('menus_id', $reservations['menus_id'], PDO::PARAM_INT);
+        $statement->bindValue('client_id', $reservations['client_id'], PDO::PARAM_INT);
         $statement->bindValue('date', $reservations['date'], PDO::PARAM_STR);
+        $statement->bindValue('nombrepersonnes', $reservations['nombrepersonnes'], PDO::PARAM_INT);
+        $statement->bindValue('remarques', $reservations['remarques'], PDO::PARAM_STR);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();

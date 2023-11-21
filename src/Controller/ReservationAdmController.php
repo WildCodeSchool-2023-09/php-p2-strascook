@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Controller\AbstractController;
 use App\Model\ReservationAdmManager;
+use App\Model\UserManager;
+use App\Model\MenusManager;
 
 class ReservationAdmController extends AbstractController
 {
@@ -25,10 +27,9 @@ class ReservationAdmController extends AbstractController
             if ($_POST['menus_id'] === '') {
                 $errors['menus_id'] = 'Veuillez renseigner le menu';
             }
-            /*if($_POST['nb_pers'] === '')
-            {
-                $errors['nb_pers'] = 'Veuillez renseigner le nombre de personnes';
-            }*/
+            if ($_POST['nombrepersonnes'] === '') {
+                $errors['nombrepersonnes'] = 'Veuillez renseigner le nombre de personnes';
+            }
             if ($_POST['date'] === '') {
                 $errors['date'] = 'Veuillez renseigner la date';
             }
@@ -39,6 +40,15 @@ class ReservationAdmController extends AbstractController
                 header('Location: /admin/resa');
             }
         }
-        return $this->twig->render('Admin/Reservation/add.html.twig', ['errors' => $errors]);
+            $userManager = new UserManager();
+            $users = $userManager->selectAll();
+
+            $menusManager = new MenusManager();
+            $menus = $menusManager->selectAll();
+
+        return $this->twig->render(
+            'Admin/Reservation/add.html.twig',
+            ['errors' => $errors, 'users' => $users, 'menus' => $menus]
+        );
     }
 }

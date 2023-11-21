@@ -11,7 +11,11 @@
     <fieldset class="uk-fieldset">
 
         <div class="uk-margin">
-            <input class="uk-input" name="client_id" type="text" placeholder="client_ID" aria-label="Input">
+            <select class="uk-input" name="client_id" type="text" placeholder="sélectionner un client" aria-label="Input" required>
+            {% for user in users %}
+            <option value={{user.id}}>{{ user.nom }} {{ user.prenom }}</option>
+            {% endfor %}
+            </select>
         </div>
         {% if errors.client_id is defined %} 
                     <div class="uk-alert-danger" uk-alert>
@@ -21,7 +25,11 @@
         {% endif %}
         
         <div class="uk-margin">
-            <input class="uk-input" name="menus_id" type="text" placeholder="menu_ID" aria-label="Input">
+            <select class="uk-input" name="menus_id" type="text" placeholder="sélectionner un menu" aria-label="Input" required>
+            {% for menu in menus %}
+            <option value={{menu.id}}>{{ menu.nom }}</option>
+            {% endfor %}
+            </select>
         </div>
         {% if errors.menus_id is defined %} 
                     <div class="uk-alert-danger" uk-alert>
@@ -30,12 +38,29 @@
                     </div>
         {% endif %}
 
-       <!-- <div class="uk-margin">    
-            <input class="uk-input" name="nb_pers" type="text" placeholder="Nombre de personnes" aria-label="Input">
-            </div> -->
+       <div class="uk-margin">    
+            <select class="uk-input" name="nombrepersonnes" type="text" placeholder="Nombre de personnes" aria-label="Input" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div> 
+        {% if errors.nombreperonnes is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.nombrepersonnes }}</p>
+                    </div>
+        {% endif %}
 
         <div class="uk-margin">
-            <input class="uk-input" name="date" type="date" aria-label="Input">
+            <input class="uk-input" name="date" type="date" aria-label="Input" required>
         </div>
         {% if errors.date is defined %} 
                     <div class="uk-alert-danger" uk-alert>
@@ -43,6 +68,10 @@
                         <p>{{ errors.date }}</p>
                     </div>
         {% endif %}
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" name="remarques" type="date" aria-label="Textarea" placeholder="Remarques particulières" rows="5" cols="40"></textarea>
+        </div>
 
             <button class="uk-button uk-button-secondary uk-button-medium">Envoyer</button>
         </div>
