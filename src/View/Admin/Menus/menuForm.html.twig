@@ -1,0 +1,63 @@
+<h2 class="uk-text-center">Formulaire d'administration</h2>
+
+<div class="uk-flex uk-flex-center">
+
+    <form class="uk-width-1-3" method="post" enctype="multipart/form-data">
+
+        <fieldset class="uk-fieldset">
+
+            <legend class="uk-legend">Ajout d'un menu</legend>
+
+            <div class="uk-margin">
+                <input class="uk-input" type="text" name="nom" placeholder="Nom du menu" value="{{ menu.nom }}" aria-label="Input">
+            </div> 
+
+            <div class="uk-margin">
+                <textarea class="uk-textarea" rows="5" style="resize: none;" name="description" placeholder="Description du menu" aria-label="Textarea">{{ menu.description }}</textarea>
+            </div>
+
+            <div class="uk-margin">
+                <input class="uk-input" type="number" name="prix" placeholder="Prix du plat" value="{{ menu.prix }}" aria-label="Input">
+            </div>
+
+            {# nescessaire pour l'update du formualre (modification) #}  
+            <input  type="hidden" name="id"  value="{{ menu.id }}">
+
+            {% if menu.photo is defined %}
+            {% set photo = menu.photo %}
+            {% else %}
+            {% set photo = "/assets/images/pinterest.svg" %}
+            {% endif %}
+
+            {# <div class="uk-margin">
+                <input class="uk-input" type="text" name="photo" placeholder="Image Path" value="{{ menu.photo }}" aria-label="Input">
+            </div> #}
+
+            <div class="uk-margin">
+                <div uk-form-custom>
+                    <input type="file" name="photo" aria-label="Custom controls" accept"">
+                    <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
+                </div>
+            </div>
+
+            <!-- Prevoir l'upload du fichier image !!! -->
+
+            <!-- Thematiques: 1 pour Entree, 2 pour Plat, 3 pour Dessert. -->
+
+            {# <div class="uk-form-controls">
+                <select class="uk-select" id="form-stacked-select" name="thematiques_id">
+                    <option  value="" >Selectionner votre thématique</option>
+                    <option value="1" >Entrée</option>
+                    <option value="2" >Plat</option>
+                    <option value="3" >Dessert</option>
+                </select>
+            </div> #}
+
+            {# Bouton de soumission #}  
+            <div class="uk-margin">
+                <button type="submit" class="uk-button uk-button-primary">Soumettre</button>
+            </div>
+
+        </fieldset>
+    </form>
+</div>

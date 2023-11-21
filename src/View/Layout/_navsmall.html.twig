@@ -1,0 +1,57 @@
+<nav class="uk-navbar-container navfix">
+	<div class="uk-container">
+		<div
+			uk-navbar>
+
+			{# Les 2 images : logo et handy strascook #}
+			<div class="uk-navbar-left">
+				<img src="/assets/images/logo_strascook.png" width="60" heigth="60" alt="logo du site strascook"/>
+				<img src="/assets/images/handy_strascook.png" width="160" heigth="160" alt="logo du site strascook"/>
+			</div>
+
+			{# La sidenav #}
+			<div id="sidenav" uk-offcanvas="flip: true" class="uk-offcanvas">
+				<div class="uk-offcanvas-bar">
+					<ul class="uk-nav">
+						<li>
+							<a class="uk-text-large" href="/">Accueil</a>
+						</li>
+						<li>
+							<a class="uk-text-large" href="/menus">Menus</a>
+						</li>
+						<li>
+							<a class="uk-text-large" href="/reservation/add">Reservation</a>
+						</li>
+						<li>
+							<a class="uk-text-large" href="/contact">Contact</a>
+						</li>
+						{% if session.isAdmin == true %}
+							<li class="uk-text-largee">
+								<a href="/admin/dashboard">Dashboard</a>
+							</li>
+						{% endif %}
+						{% if session.isLogin == true %}
+							<li class="uk-text-large">
+								<a href="/logout">Déconnexion</a>
+							</li>
+						{% else %}
+							<li class="uk-text-large">
+								<a href="/connexion">Connexion</a>
+							</li>
+							<li class="uk-text-large">
+								<a href="/inscription">Inscription</a>
+							</li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+
+			{# Burger Menu qui déclenche la sidenav #}
+			<div class="uk-navbar-right">
+				<a class="uk-navbar-toggle" uk-toggle="target: #sidenav" uk-navbar-toggle-icon></a>
+			</div>
+
+		</div>
+
+	</div>
+</div></nav>

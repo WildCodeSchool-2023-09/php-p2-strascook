@@ -13,6 +13,7 @@
     height: calc(var(--size)*2.5);
     border-radius: 20px;
     margin: auto;
+    font-size: calc(var(--font-size)*1.5);
 }
 
 .connexion-label-input {
@@ -41,4 +42,5 @@
     padding-top: calc(var(--padding)*0.5);
     font-family: var(--main-font);
     font-size: calc(var(--font-size)*1.2);
+    padding-bottom: calc(var(--padding)*2);
 }

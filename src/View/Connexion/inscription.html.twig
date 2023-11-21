@@ -12,23 +12,89 @@
 
         <form method="post" class="connexion-form">
 
-            <div class="connexion-label-input">
-                <label for="username" class="connexion-label">Nom d'utilisateur</label>
-                <input type="text" name="username" class="connexion-champ uk-form-width-large" required>
+            <div> 
+                <div class="connexion-label-input">
+                    <label for="firstname" class="connexion-label">Prénom</label>
+                    <input type="text" name="firstname" class="connexion-champ uk-form-width-large" required>
+                </div>
+                {% if errors.firstname is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.firstname }}</p>
+                    </div>
+                {% endif %}
+
+                <div class="connexion-label-input">
+                    <label for="lastname" class="connexion-label">Nom</label>
+                    <input type="text" name="lastname" class="connexion-champ uk-form-width-large" required>
+                </div>
+                {% if errors.lastname is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.lastname }}</p>
+                    </div>
+                {% endif %}
+
+                <div class="connexion-label-input">
+                    <label for="adress" class="connexion-label">Adresse</label>
+                    <input type="text" name="adress" class="connexion-champ uk-form-width-large" required>
+                </div>
+                {% if errors.adress is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.adress }}</p>
+                    </div>
+                {% endif %}
+
+                <div class="connexion-label-input">
+                    <label for="phone" class="connexion-label">Numéro de téléphone</label>
+                    <input type="text" name="phone" class="connexion-champ uk-form-width-large" required>
+                </div>
+                {% if errors.phone is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.phone }}</p>
+                    </div>
+                {% endif %}
             </div>
 
-            <div class="connexion-label-input">
-                <label for="email" class="connexion-label">E-mail</label>
-                <input type="text" name="email²" class="connexion-champ uk-form-width-large" required>
-            </div>
+            <div>
+                <div class="connexion-label-input">
+                    <label for="username" class="connexion-label">Nom d'utilisateur</label>
+                    <input type="text" name="username" class="connexion-champ uk-form-width-large" required>
+                </div>
+                {% if errors.username is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.username }}</p>
+                    </div>
+                {% endif %}
 
-            <div class="connexion-label-input">
-                <label for="password" class="connexion-label">Mot de passe</label>
-                <input type="text" name="password" class="connexion-champ uk-form-width-large" required>
-            </div>
+                <div class="connexion-label-input">
+                    <label for="email" class="connexion-label">E-mail</label>
+                    <input type="text" name="email" class="connexion-champ uk-form-width-large" required>
+                </div>
+                {% if errors.email is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.email }}</p>
+                    </div>
+                {% endif %}
 
-            <div class="button-connexion-form">
-                <button class="uk-button-large">Inscription</button>
+                <div class="connexion-label-input">
+                    <label for="password" class="connexion-label">Mot de passe</label>
+                    <input type="text" name="password" class="connexion-champ uk-form-width-large" required>
+                </div>
+                {% if errors.password is defined %} 
+                    <div class="uk-alert-danger" uk-alert>
+                        <a href class="uk-alert-close" uk-close></a>
+                        <p>{{ errors.password }}</p>
+                    </div>
+                {% endif %}
+
+                <div class="button-connexion-form">
+                    <button class="uk-button-large" href="">Inscription</button>
+                </div>
             </div>
         
         </form> 
