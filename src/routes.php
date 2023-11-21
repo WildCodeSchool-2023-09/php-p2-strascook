@@ -11,7 +11,7 @@ return [
     'reservation/add' => ['ReservationController', 'add',],
     'connexion' => ['ConnexionController', 'login',],
     'logout' => ['ConnexionController', 'logout',],
-    'contact' => ['ContactController', 'index',],
+    'contact' => ['ContactController', 'add',],
     'inscription' => ['InscriptionController', 'index',],
     'menus' => ['MenusController', 'index',],
     'admin/menus/read' => ['MenusAdmController', 'read',],
@@ -24,9 +24,10 @@ return [
     'admin/user/new' => ['UserController', 'new',],
     'admin/resa' => ['ReservationAdmController', 'index',],
     'admin/resa/add' => ['ReservationAdmController', 'add',],
+    'admin/contactAdmin' => ['ContactAdminController', 'index',],
+    'admin/contactAdmin/delete' => ['ContactAdminController', 'delete', ['id']],
     'produits' => ['ProduitsController', 'index'],
     'produits/add' => ['ProduitsController', 'add'],
     'produits/edit' => ['ProduitsController', 'edit', ['id']],
     'produits/delete' => ['ProduitsController', 'delete', ['id']],
-
 ];
