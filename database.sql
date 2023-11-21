@@ -42,10 +42,10 @@ CREATE TABLE
 
 CREATE TABLE
     IF NOT EXISTS `reservation` (
+        `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `menus_id` INT NOT NULL,
         `client_id` INT NOT NULL,
         `date` DATE NOT NULL,
-        PRIMARY KEY (`menus_id`, `client_id`),
         INDEX `fk_menus_has_client_client1_idx` (`client_id` ASC) VISIBLE,
         INDEX `fk_menus_has_client_menus_idx` (`menus_id` ASC) VISIBLE,
         CONSTRAINT `fk_menus_has_client_client1` FOREIGN KEY (`client_id`) REFERENCES `user` (`id`),

@@ -26,6 +26,7 @@ return [
     'admin/resa/add' => ['ReservationAdmController', 'add',],
     'admin/contactAdmin' => ['ContactAdminController', 'index',],
     'admin/contactAdmin/delete' => ['ContactAdminController', 'delete', ['id']],
+    'admin/resa/edit' => ['ReservationAdmController', 'edit', ['id'],],
     'produits' => ['ProduitsController', 'index'],
     'produits/add' => ['ProduitsController', 'add'],
     'produits/edit' => ['ProduitsController', 'edit', ['id']],

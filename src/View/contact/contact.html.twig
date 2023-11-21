@@ -4,54 +4,67 @@
 {% endblock %}
 
 {% block content %}
-<h1>Contactez nous</h1>
-<img src="assets/images/food3.jpg" alt="food" width=100%>
+	<h1>Contactez nous</h1>
+	<img src="assets/images/food3.jpg" alt="food" width="100%">
 
 	<div class="uk-child-width-expand@s" uk-grid>
 		<div class="uk-grid-item-match">
 			<div class="uk-card uk-card-default uk-card-body div-contact-infos">
-				
+
 				N’hésitez pas à nous contacter via le formulaire de contact si vous avez des questions ou des demandes spécifiques, 
-																	nous nous ferons un plaisir de vous répondre dans les meilleurs délais.<br>
+																									nous nous ferons un plaisir de vous répondre dans les meilleurs délais.<br>
 				Pour une réponse rapide vous pouvez nous contacter par téléphone au 0601020304.<br>
 
 				<span>Dès réception de votre message, si besoin, nous vous contacterons par mail ou par téléphone. A bientôt !</span>
-				<h2 class="title"><u>StrasCook</u></h2>
-				<p><span uk-icon="location"></span> Remote Avenue 67000 STRASBOURG
+				<h2 class="title">
+					<u>StrasCook</u>
+				</h2>
+				<p>
+					<span uk-icon="location"></span>
+					Remote Avenue 67000 STRASBOURG
 					<br>
-					<span uk-icon="receiver"></span> 0601020304
-                    <br>
-                    <span uk-icon="mail"></span> StrasCook@gmail.com</p>
+					<span uk-icon="receiver"></span>
+					0601020304
+					<br>
+					<span uk-icon="mail"></span>
+					StrasCook@gmail.com</p>
 
-					<h3 class="title"><u>Retrouvez nous sur nos reseaux</u></h3>
-					<a href="https://www.facebook.fr" class="uk-icon-button" uk-icon="facebook"></a>  
-					<a href="https://www.instagram.fr" class="uk-icon-button" uk-icon="instagram"></a>  
-                    <a href="https://www.pinterest.fr" class="uk-icon-button" uk-icon="pinterest"></a>
+				<h3 class="title">
+					<u>Retrouvez nous sur nos reseaux</u>
+				</h3>
+				<a href="https://www.facebook.fr" class="uk-icon-button" uk-icon="facebook"></a>
+				<a href="https://www.instagram.fr" class="uk-icon-button" uk-icon="instagram"></a>
+				<a href="https://www.pinterest.fr" class="uk-icon-button" uk-icon="pinterest"></a>
 			</div>
 		</div>
 
 		<div class="uk-container div-contact-form">
 			<form class="uk-grid-medium uk-grid" method="POST">
 				<div class="uk-width-1-2@s">
-                <label class="label-contact"> Nom</label>
+					<label class="label-contact">
+						Nom</label>
 					<input class="uk-input formcontact" name="nom" type="text" placeholder="Votre Nom" aria-label="100" required>
 				</div>
 				<div class="uk-width-1-2@s">
-                <label class="label-contact"> Prénom</label>
+					<label class="label-contact">
+						Prénom</label>
 					<input class="uk-input formcontact" name="prénom" type="text" placeholder="Votre Prénom" aria-label="50" required>
 				</div>
 				<div class="uk-width-1-2@s">
-                <label class="label-contact"> E-mail</label>
+					<label class="label-contact">
+						E-mail</label>
 					<input class="uk-input formcontact" name="email" type="text" placeholder="Votre Email" aria-label="25" required>
 				</div>
 				<div class="uk-width-1-2@s">
-                <label class="label-contact"> Téléphone</label>
+					<label class="label-contact">
+						Téléphone</label>
 					<input class="uk-input formcontact" name="téléphone" type="text" placeholder="Votre numéro de téléphone" aria-label="25" required>
 				</div>
 				<div class="uk-margin uk-width-1-1@s">
-				<label class="label-contact"> Message</label>
-                            <textarea class="uk-textarea formcontact" rows="5" placeholder="Votre Message" aria-label="Textarea"></textarea>
-                        </div>
+					<label class="label-contact">
+						Message</label>
+					<textarea class="uk-textarea formcontact" rows="5" placeholder="Votre Message" aria-label="Textarea"></textarea>
+				</div>
 				<div class="uk-width-1-2@s">
 					<button class="uk-button-large button-submit-contact" type="submit">Envoyer</button>
 				</div>

@@ -1,9 +1,12 @@
- {% extends "layout.html.twig" %}
+{% extends "layout.html.twig" %}
 
- {% block content %}
+{% block content %}
 
-{% include 'Admin/Menus/menuForm.html.twig' %}
-    <a href="read" uk-icon="icon: reply" >Retour à la BDD</a>
- {% endblock %}
+    {% if session.isAdmin == true %}
+        {% include 'Admin/Menus/menuForm.html.twig' %}
+        <a href="read" uk-icon="icon: reply" >Retour à la BDD</a>
+    {% else %}
+        <h4 style="color: red;">Veuillez vous connecter avec votre compte Admin pour effectuer des modifications."</h4>
+    {% endif %} 
 
- 
+{% endblock %}
