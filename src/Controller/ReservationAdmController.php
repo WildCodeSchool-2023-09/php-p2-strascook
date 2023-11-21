@@ -56,13 +56,20 @@ class ReservationAdmController extends AbstractController
     {
         $reservationManager = new ReservationAdmManager();
 
-        /*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $reservationManager->update($_POST);
 
             header('Location: /admin/resa');
-        }*/
+        }
 
         $reservation = $reservationManager->selectOneByIdJoin($id);
-        return $this->twig->render('Admin/Reservation/edit.html.twig', ['reservation' => $reservation]);
+
+        $menusManager = new MenusManager();
+        $menus = $menusManager->selectAll();
+
+        return $this->twig->render(
+            'Admin/Reservation/edit.html.twig',
+            ['reservation' => $reservation, 'menus' => $menus]
+        );
     }
 }

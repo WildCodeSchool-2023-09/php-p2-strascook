@@ -54,4 +54,18 @@ class ReservationAdmManager extends AbstractManager
 
         return $statement->fetch();
     }
+
+    public function update(array $reservation)
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
+        SET menus_id=:menus_id, nombrepersonnes=:nombrepersonnes, date=:date, remarques=:remarques WHERE id=:id");
+        $statement->bindValue('menus_id', $reservation['menus_id'], PDO::PARAM_STR);
+        $statement->bindValue('nombrepersonnes', $reservation['nombrepersonnes'], PDO::PARAM_STR);
+        $statement->bindValue('date', $reservation['date'], PDO::PARAM_STR);
+        $statement->bindValue('remarques', $reservation['remarques'], PDO::PARAM_STR);
+        $statement->bindValue('id', $reservation['id'], PDO::PARAM_INT);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
 }
