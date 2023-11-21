@@ -345,3 +345,33 @@ CREATE TABLE
 UPDATE user SET email='vinzel@gmal.com' WHERE id=3;
 
 ALTER TABLE user MODIFY adresse TEXT;
+
+UPDATE menus
+SET
+    photo = '/assets/images/menufastfood1.jpg'
+WHERE `id` = 1;
+
+UPDATE menus
+SET
+    photo = '/assets/images/menuasiatique1.jpg'
+WHERE `id` = 2;
+
+UPDATE menus
+SET
+    photo = '/assets/images/menumoleculaire1.jpg'
+WHERE `id` = 3;
+
+UPDATE menus
+SET
+    photo = '/assets/images/menuvegan1.jpg'
+WHERE `id` = 4;
+
+UPDATE menus
+SET
+    photo = '/assets/images/menugastronomique1.png'
+WHERE `id` = 5;
+
+UPDATE menus
+SET
+    photo = '/assets/images/menustrasbourgeois1.jpg'
+WHERE `id` = 6;
