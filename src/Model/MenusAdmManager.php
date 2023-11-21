@@ -11,7 +11,7 @@ class MenusAdmManager extends AbstractManager
 {
     public const TABLE = 'menus';
 
-    public function update(array $menu): bool
+    public function update(array $menu, string $fileName): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
          " SET nom=:nom, description=:description, prix=:prix, photo=:photo  WHERE id=:id");
@@ -19,7 +19,8 @@ class MenusAdmManager extends AbstractManager
         $statement->bindValue('nom', $menu['nom'], \PDO::PARAM_STR);
         $statement->bindValue('description', $menu['description'], \PDO::PARAM_STR);
         $statement->bindValue('prix', $menu['prix'], \PDO::PARAM_INT);
-        $statement->bindValue('photo', $menu['photo'], \PDO::PARAM_STR);
+        //$statement->bindValue('photo', $menu['photo'], \PDO::PARAM_STR);
+        $statement->bindValue('photo', $fileName, \PDO::PARAM_STR);
         $statement->bindValue('id', $menu['id'], \PDO::PARAM_INT);
         return $statement->execute();
     }

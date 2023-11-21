@@ -55,7 +55,29 @@ class MenusAdmController extends AbstractController
         $menusAdmManager = new MenusAdmManager();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $menusAdmManager->update($_POST);
+            // DEBUG: Affiche le path courant.
+            // $currentPath = $_SERVER['REQUEST_URI'];
+            // echo "Current Path: $currentPath";
+
+            // ------------ GESTION UPLOAD IMAGE --------------------------
+            // Si le dossier UPLOAD n'existe pas, on le créée.
+            $uploadDir = __DIR__ . '/../../public/upload/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir);
+            }
+            var_dump($_FILES);
+            // Recupere le nom et le nom temporaire de l'image selectionnée
+            $photoName = $_FILES['photo']['name'];
+            $photoTmpName = $_FILES['photo']['tmp_name'];
+            //Et on le déplace dans le dossier UPLOAD.
+            $uniqueFile = time() . '_' . basename($photoName);
+            move_uploaded_file($photoTmpName, $uploadDir . $uniqueFile);
+            // -------------------------------------------------------------
+
+            // On interroge la BDD.
+            $menusAdmManager = new MenusAdmManager();
+            $menusAdmManager->update($_POST, $uniqueFile);
+            // redirection sur la 1ere page du dashboard.
             header('Location: /admin/menus/read');
         }
 

@@ -1,44 +1,52 @@
 {% extends "admin.html.twig" %}
 
 {% block content %}
-	<div uk-grid>
-		<div>
-			<div class="uk-card uk-card-default uk-card-body">
-				<h3 class="uk-card-title">Vos produits</h3>
-				<a class="uk-button-large" href="/produits/add">Ajoutez un nouveau produit</a>
-				<table id="example" class="uk-table uk-table-hover uk-table-divider">
-					<thead>
-						<tr>
-							<th>nom</th>
-							<th>type</th>
-							<th>sous-type</th>
-							<th>option</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						{% for produit in produits %}
+	{% if session.isAdmin == true %}
+		<div uk-grid>
+			<div>
+				<div class="uk-card uk-card-default uk-card-body">
+					<h3 class="uk-card-title">Vos produits</h3>
+					<a class="uk-button-large" href="/produits/add">Ajoutez un nouveau produit</a>
+					<table id="example" class="uk-table uk-table-hover uk-table-divider">
+						<thead>
 							<tr>
-								<td>{{ produit.nom }}</td>
-								<td>{{ produit.type }}</td>
-								<td>{{ produit.sous_type }}</td>
-								<td>
-									<a href="/produits/edit?id={{ produit.id }}" uk-icon="icon: pencil"></a>
-									<a href="/produits/delete?id={{ produit.id }}" uk-icon="icon: trash"></a>
-								</td>
+								<th>nom</th>
+								<th>type</th>
+								<th>sous-type</th>
+								<th>option</th>
 							</tr>
-						</tr>
-					{% else %}
-						<tr>
-							<td colspan="3">Pas de donnée</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
+						</thead>
+
+						<tbody>
+							{% for produit in produits %}
+								<tr>
+									<td>{{ produit.nom }}</td>
+									<td>{{ produit.type }}</td>
+									<td>{{ produit.sous_type }}</td>
+									<td>
+										<a href="/produits/edit?id={{ produit.id }}" uk-icon="icon: pencil"></a>
+										<a href="/produits/delete?id={{ produit.id }}" uk-icon="icon: trash"></a>
+									</td>
+								</tr>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="3">Pas de donnée</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>{% endblock %}{% block javascript %}
-{{ parent()}}
-<script>
-	new DataTable('#example');
-</script>{% endblock %}
+    {% else %}
+        <h4 style="color: red;">Veuillez vous connecter avec votre compte Admin pour effectuer des modifications."</h4>
+    {% endif %}
+{% endblock %}
+
+{% block javascript %}
+	{{ parent()}}
+	<script>
+		new DataTable('#example');
+	</script>
+{% endblock %}
