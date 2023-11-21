@@ -20,6 +20,7 @@
             <th>Menu</th>
             <th>Date</th>
             <th>Nb de personnes</th>
+            <th>Remarques</th>
         </tr>
     </thead>
     <tbody>
@@ -33,6 +34,7 @@
             <td>{{reservation.menu_nom}}</td>
             <td>{{reservation.date}}</td>
             <td>{{reservation.nombrepersonnes}}</td>
+            <td>{{reservation.remarques}}</td>
             <td>
                 <a href="/admin/resa/edit?id={{ reservation.id }}" uk-icon="icon: pencil"></a>
                 <a href="" uk-icon="icon: trash"></a>

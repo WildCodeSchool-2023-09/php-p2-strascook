@@ -20,7 +20,7 @@
         
         <div class="uk-margin">
             <select class="uk-input" name="menus_id" type="text" placeholder="sélectionner un menu" aria-label="Input" required>
-            <option>{{reservation.menu_nom}}</option>
+            <option value="{{reservation.menus_id}}">{{reservation.menu_nom}}</option>
             {% for menu in menus %}
             <option value={{menu.id}}>{{ menu.nom }}</option>
             {% endfor %}
