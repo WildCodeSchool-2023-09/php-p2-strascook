@@ -1,5 +1,7 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}Page des Menus Strascook{% endblock %}
+
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/_cards.css" />
 {% endblock %}
@@ -7,6 +9,10 @@
 {% block content %} 
 
 {# Le code utilise /public/assets/css/_cards.css #}
+
+<div class="uk-container uk-container-expand lw-div-accueil">
+  		<h1 class="uk-heading-small">Découvrez nos menus</h1>
+</div>
 
 {% for menu in menus %}
 {# Rajouter uk-container uk-width-2-3 dans la div ci-dessous pour centrer #}
