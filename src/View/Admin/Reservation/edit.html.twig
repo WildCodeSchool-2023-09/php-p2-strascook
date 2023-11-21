@@ -7,27 +7,20 @@
 <div uk-grid>
     <div>
     <div class="uk-card uk-card-default uk-card-body">
-    <h3 class="uk-card-title">Nouvelle Réservation</h3>
+    <h3 class="uk-card-title">Modifier Réservation</h3>
 
 <form method="post">
     <fieldset class="uk-fieldset">
 
         <div class="uk-margin">
-            <select class="uk-input" name="client_id" type="text" placeholder="sélectionner un client" aria-label="Input" required>
-            {% for user in users %}
-            <option value={{user.id}}>{{ user.nom }} {{ user.prenom }}</option>
-            {% endfor %}
+            <select class="uk-input" name="client_id" type="text" placeholder="sélectionner un client" aria-label="Input" disabled required>
+            <option>{{ reservation.nom }} {{ reservation.prenom }}</option>
             </select>
         </div>
-        {% if errors.client_id is defined %} 
-                    <div class="uk-alert-danger" uk-alert>
-                        <a href class="uk-alert-close" uk-close></a>
-                        <p>{{ errors.client_id }}</p>
-                    </div>
-        {% endif %}
         
         <div class="uk-margin">
             <select class="uk-input" name="menus_id" type="text" placeholder="sélectionner un menu" aria-label="Input" required>
+            <option value="{{reservation.menus_id}}">{{reservation.menu_nom}}</option>
             {% for menu in menus %}
             <option value={{menu.id}}>{{ menu.nom }}</option>
             {% endfor %}
@@ -42,6 +35,7 @@
 
        <div class="uk-margin">    
             <select class="uk-input" name="nombrepersonnes" type="text" placeholder="Nombre de personnes" aria-label="Input" required>
+                <option>{{reservation.nombrepersonnes}}</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -62,7 +56,7 @@
         {% endif %}
 
         <div class="uk-margin">
-            <input class="uk-input" name="date" type="date" aria-label="Input" required>
+            <input class="uk-input" name="date" type="date" aria-label="Input" required value={{reservation.date}}>
         </div>
         {% if errors.date is defined %} 
                     <div class="uk-alert-danger" uk-alert>
@@ -72,10 +66,14 @@
         {% endif %}
 
         <div class="uk-margin">
-            <textarea class="uk-textarea" name="remarques" type="date" aria-label="Textarea" placeholder="Remarques particulières" rows="5" cols="40"></textarea>
+            <textarea class="uk-textarea" name="remarques" type="date" aria-label="Textarea" placeholder="Remarques particulières" rows="5" cols="40">{{reservation.remarques}}</textarea>
         </div>
 
-            <button class="uk-button uk-button-secondary uk-button-medium">Envoyer</button>
+        <div class="uk-margin">
+			<input type="hidden" name="id" value="{{ reservation.id }}">
+		</div>
+
+            <button class="uk-button uk-button-secondary uk-button-medium">Modifier la réservation</button>
         </div>
 
 </form>
@@ -87,5 +85,5 @@
     {% else %}
         <h4 style="color: red;">Veuillez vous connecter avec votre compte Admin pour effectuer des modifications."</h4>
     {% endif %}
-    
+
     {% endblock %}
