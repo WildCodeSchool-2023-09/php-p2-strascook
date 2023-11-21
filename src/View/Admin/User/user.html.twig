@@ -3,6 +3,8 @@
 
 {% block content %}
 
+{% if session.isAdmin == true %}
+
     <div uk-grid>
     <div>
     <div class="uk-card uk-card-default uk-card-body">
@@ -45,4 +47,9 @@
     </div>
     </div>
     </div>
+
+    {% else %}
+        <h4 style="color: red;">Veuillez vous connecter avec votre compte Admin pour effectuer des modifications."</h4>
+    {% endif %}
+
     {% endblock %}
