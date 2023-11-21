@@ -24,6 +24,7 @@ return [
     'admin/user/new' => ['UserController', 'new',],
     'admin/resa' => ['ReservationAdmController', 'index',],
     'admin/resa/add' => ['ReservationAdmController', 'add',],
+    'admin/resa/edit' => ['ReservationAdmController', 'edit', ['id'],],
     'produits' => ['ProduitsController', 'index'],
     'produits/add' => ['ProduitsController', 'add'],
     'produits/edit' => ['ProduitsController', 'edit', ['id']],

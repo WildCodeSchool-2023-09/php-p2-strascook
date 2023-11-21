@@ -6,16 +6,6 @@
 
 -- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-
-SET
-    @OLD_FOREIGN_KEY_CHECKS = @ @FOREIGN_KEY_CHECKS,
-    FOREIGN_KEY_CHECKS = 0;
-
-SET
-    @OLD_SQL_MODE = @ @SQL_MODE,
-    SQL_MODE = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
 -- -----------------------------------------------------
 
 -- Schema mydb
@@ -102,23 +92,15 @@ CREATE TABLE
 
 CREATE TABLE
     IF NOT EXISTS `reservation` (
+        `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         `menus_id` INT NOT NULL,
         `client_id` INT NOT NULL,
         `date` DATE NOT NULL,
-        PRIMARY KEY (`menus_id`, `client_id`),
         INDEX `fk_menus_has_client_client1_idx` (`client_id` ASC) VISIBLE,
         INDEX `fk_menus_has_client_menus_idx` (`menus_id` ASC) VISIBLE,
         CONSTRAINT `fk_menus_has_client_client1` FOREIGN KEY (`client_id`) REFERENCES `user` (`id`),
         CONSTRAINT `fk_menus_has_client_menus` FOREIGN KEY (`menus_id`) REFERENCES `menus` (`id`)
     ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
-
-SET SQL_MODE=@OLD_SQL_MODE;
-
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-use stras_cook;
 
 INSERT INTO
     `produits` (`nom`, `type`, `sous_type`)

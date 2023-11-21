@@ -42,4 +42,16 @@ class ReservationAdmManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function selectOneByIdJoin(int $id): array|false
+    {
+        // prepared request
+        $statement = $this->pdo->prepare('SELECT *,m.nom AS menu_nom FROM ' . static::TABLE . ' AS r 
+        LEFT JOIN ' . static::TABLE2 . ' AS m ON m.id = r.menus_id
+        LEFT JOIN ' . static::TABLE3 . ' AS u ON u.id = r.client_id WHERE r.id=:id');
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }
