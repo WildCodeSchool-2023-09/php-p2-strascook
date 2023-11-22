@@ -280,32 +280,32 @@ ALTER TABLE user MODIFY adresse TEXT;
 
 UPDATE menus
 SET
-    photo = '/assets/images/menufastfood1.jpg'
+    photo = '1700597535_menufastfood1.jpg'
 WHERE `id` = 1;
 
 UPDATE menus
 SET
-    photo = '/assets/images/menuasiatique1.jpg'
+    photo = '1700597892_menuasiatique1.jpg'
 WHERE `id` = 2;
 
 UPDATE menus
 SET
-    photo = '/assets/images/menumoleculaire1.jpg'
+    photo = '1700597908_menumoleculaire1.jpg'
 WHERE `id` = 3;
 
 UPDATE menus
 SET
-    photo = '/assets/images/menuvegan1.jpg'
+    photo = '1700597930_menuvegan1.jpg'
 WHERE `id` = 4;
 
 UPDATE menus
 SET
-    photo = '/assets/images/menugastronomique1.png'
+    photo = '1700597953_menugastronomique1.png'
 WHERE `id` = 5;
 
 UPDATE menus
 SET
-    photo = '/assets/images/menustrasbourgeois1.jpg'
+    photo = '1700597974_menustrasbourgeois1.jpg'
 WHERE `id` = 6;
 
 UPDATE user SET isAdmin=1 WHERE `id`=1;
