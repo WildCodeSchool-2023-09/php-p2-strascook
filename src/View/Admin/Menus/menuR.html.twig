@@ -1,0 +1,48 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    {# {{dump(menus)}}  #}
+    {# Affichage d'une card #}
+
+    {% if session.isAdmin == true %}
+
+        <div class="uk-flex uk-flex-center" >
+
+                <div class="uk-card uk-card-default uk-card-body"> 
+                    <h3 class = "uk-card-title" >Base de données</h3>
+                    <a class="uk-button uk-button-primary" href="/admin/menus/create">Créer un nouvel item</a>
+                    <table class="uk-table uk-table-hover uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>description</th>
+                                <th>prix</th>
+                                <th>photo</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            {% for i in menus %}
+                                <tr>
+                                    <th>{{i.id}}</th>
+                                    <th>{{i.nom}}</th>
+                                    <th>{{i.description}}</th>
+                                    <th>{{i.prix}}</th>
+                                    <th><img src="/upload/{{i.photo}}" width="144rem" alt="{{i.nom}}"/</th>
+                                    <td>
+                                    <a href="/admin/menus/update?id={{ i.id }}" uk-icon="icon: pencil"></a>
+                                    <a href="/admin/menus/delete?id={{ i.id }}" uk-icon="icon: trash"></a>
+                                    </td>
+                                </tr>
+                                {% else %} <td>td colspan="">pas de donnée</td>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+    {% else %}
+            <h4 style="color: red;">Veuillez vous connecter avec votre compte Admin pour effectuer des modifications."</h4>
+    {% endif %}
+{% endblock %}  

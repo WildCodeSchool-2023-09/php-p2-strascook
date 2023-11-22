@@ -1,0 +1,31 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+	{% if session.isAdmin == true %}
+		<div class="add-produits">
+			<h1 class="titre-add-produits">Ajoutez des produits
+				<span uk-icon="database" class="icon-database"></span>
+			</h1>
+		</div>
+	
+		<form method="post">
+
+			<div class="uk-margin">
+				<input class="uk-input uk-form-width-medium" type="text" name="nom" placeholder="Nom produit" aria-label="Default">
+			</div>
+			<div class="uk-margin">
+				<input class="uk-input uk-form-width-medium" type="text" name="type" placeholder="Type produit" aria-label="Default">
+			</div>
+			<div class="uk-margin">
+				<input class="uk-input uk-form-width-medium" type="text" name="sous-type" placeholder="Sous-type produit" aria-label="Default">
+			</div>
+			<div class="uk-container sv-margin">
+				<button name="submit" type="submit" class="uk-button-large">Ajoutez produit</button>
+			</div>
+		</form>
+    {% else %}
+        <h4 style="color: red;">Veuillez vous connecter avec votre compte Admin pour effectuer des modifications."</h4>
+    {% endif %}
+
+{% endblock %}

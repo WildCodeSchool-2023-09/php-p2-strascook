@@ -1,0 +1,55 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block content %}
+
+{% if session.isAdmin == true %}
+
+    <div uk-grid>
+    <div>
+    <div class="uk-card uk-card-default uk-card-body">
+    <h3 class="uk-card-title">Clients</h3>
+    <a class="uk-button uk-button-primary" href="/admin/user/new">Ajouter un nouveau client</a>
+<table class="uk-table uk-table-divider">
+<thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Adresse</th>
+            <th>Numéro de Téléphone</th>
+            <th>E-Mail</th>
+            <th>Identifiant</th>
+            <th>Mot de Passe</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{user.nom}}</td>
+            <td>{{user.prenom}}</td>
+            <td>{{user.adresse}}</td>
+            <td>{{user.tel}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.identifiant}}</td>
+            <td>{{user.mot_de_passe}}</td>
+            <td>
+                <a href="" uk-icon="icon: pencil"></a>
+                <a href="" uk-icon="icon: trash"></a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan='8'>Pas de données</td>
+        </tr>
+        {% endfor %} 
+    </tbody>
+</table>
+    </div>
+    </div>
+    </div>
+
+    {% else %}
+        <h4 style="color: red;">Veuillez vous connecter avec votre compte Admin pour effectuer des modifications."</h4>
+    {% endif %}
+
+    {% endblock %}

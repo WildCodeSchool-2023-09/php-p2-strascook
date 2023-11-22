@@ -1,0 +1,14 @@
+{# {% extends "layout.html.twig.html" %} #}
+
+{% extends "admin.html.twig" %}
+
+{% block content %}
+  <div uk-grid>
+      <div>
+          <div class="uk-card uk-card-default uk-body">
+              <h3 class="uk-card-title">Clients</h3>
+              <p>{{customers|length}}</p>
+          </div>
+      </div>
+  </div>
+{% endblock %}

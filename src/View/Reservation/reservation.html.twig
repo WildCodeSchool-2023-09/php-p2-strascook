@@ -1,0 +1,128 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Page de réservation Strascook{% endblock %}
+
+{% block content %}
+
+	<div class="uk-container uk-container-expand lw-div-accueil">
+  		<h1 class="uk-heading-small">Réservez votre expérience</h1>
+	</div>
+
+	{% if session.isLogin == true %}
+
+		<div class="form-resa">
+			<form method="POST">
+				<div class="champs-form">
+
+					<div class="colonne1">
+						<div class="sv-margin">
+							<label for="text">
+								<span uk-icon="user"></span>
+								Vos coordonnées :</label>
+						</div>
+						<div class="sv-margin">
+							<input type="text" name="nom" value="{{ session.nom }}">
+						</div>
+						<div class="sv-margin">
+							<input type="text" name="prenom" value="{{ session.prenom }}">
+						</div>
+
+						<div class="sv-margin">
+							<input type="text" name="adresse" value="{{ session.adresse }}">
+						</div>
+
+						<div class="sv-margin">
+							<input type="text" name="tel" value="{{ session.tel }}">
+						</div>
+
+						<div class="sv-margin email">
+							<input type="email" name="email" value="{{ session.email }}">
+						</div>
+					</div>
+					<div>
+
+						<div class="colonne2">
+
+							<div class="choix-menu">
+
+								<div class="titre-choix-menu">
+									<label for="text">
+										<span uk-icon="bag"></span>
+										Votre choix de menu :</label>
+								</div>
+								<select name="menus_id">
+									<option value="">Veuillez sélectionner votre choix</option>
+									{% for menu in menus %}
+										<option value="{{ menu.id }}">{{ menu.nom }}</option>
+
+									{% endfor %}
+
+								</select>
+								{{ errors.menus_id }}
+							</div>
+
+
+							<div class="person-resa">
+
+								<div class="titre-person-resa">
+									<label for="text">
+										<span uk-icon="users"></span>
+										Nombre de personnes :</label>
+								</div>
+
+								<select name="nombredepersonnes">
+									<option value="">Veuillez sélectionner le nombre de personnes :</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+							</div>
+							{{ errors.nombredepersonnes }}
+
+
+							<div class="date-resa">
+
+								<div class="date-resa-text">
+
+									<label for="text">
+										<span uk-icon="calendar"></span>
+										La date de votre soirée :</label>
+								</div>
+
+								<input type="date" name="date">
+								{{ errors.date }}
+							</div>
+						</div>
+
+						<div class="usermessage">
+
+
+							<label for="text">
+								<div class="usermessage-text">
+									<span uk-icon="comment"></span>
+									Remarques particulières :</label>
+							</div>
+							<textarea name="remarques" rows="4" cols="20" maxlenght="500"></textarea>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="uk-container uk-container-expand sv-padding">
+					<a href="/reservation/add">
+						<button class="uk-button-large">Réservez</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	{% else %}
+		<p>Veuillez vous connecter</p>
+	{% endif %}
+</div>{% endblock %}

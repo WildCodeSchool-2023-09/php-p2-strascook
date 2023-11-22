@@ -1,0 +1,121 @@
+.titre-resa-form {
+    text-align: center;
+    font-size: 2rem;
+    color: var (--dark);
+    font-family: var(--title-font);
+}
+
+.titre-resa h1 {
+    padding-top: var(--padding);
+}
+
+.champs-form {
+    color: white;
+    font-family: var(--main-font);
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+::placeholder {
+    color: white;
+}
+
+.sv-margin {
+    margin: 0.5rem;
+}
+
+.sv-padding {
+    padding-top: calc(var(--padding)*4);
+}
+
+.form-resa input {
+    border-radius: 20px;
+    font-family: var(--main-font);
+    width: 150%;
+    height: 30px;
+    border: none;
+    box-shadow: var(--box-shadow);
+}
+
+.email {
+    padding-bottom: var(--padding);
+}
+
+.titre-choix-menu {
+    padding-bottom: var(--padding);
+}
+
+.choix-menu select {
+    border-radius: 20px;
+    font-family: var(--main-font);
+    width: 150px;
+    height: 30px;
+    border: none;
+    box-shadow: var(--box-shadow);
+}
+
+.usermessage label {
+    padding-bottom: var(--padding);
+}
+
+.usermessage textarea {
+    border-radius: 20px;
+    width: 550px;
+    height: 110px;
+    border: none;
+    box-shadow: var(--box-shadow);
+}
+
+.colonne1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    align-items: flex-start;
+}
+
+.colonne2 {
+    display: flex;
+    padding-bottom: calc(var(--padding)*2);
+    justify-content: space-around;
+}
+
+.person-resa {
+    padding-left: calc(var(--padding)*1.5);
+}
+
+.person-resa select {
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    font-family: var(--main-font);
+    width: 150px;
+    height: 30px;
+    border: none;
+}
+
+.titre-person-resa {
+    padding-bottom: var(--padding);
+}
+
+
+.date-resa-text {
+    padding-bottom: var(--padding);
+}
+
+.date-resa input {
+    width: 150px;
+}
+
+.usermessage-text {
+    padding-bottom: var(--padding);
+}
+
+.uk-container {
+    text-align: center;
+}
+
+.uk-button-large:hover {
+    box-shadow: var(--box-shadow);
+}
