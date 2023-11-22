@@ -1,11 +1,13 @@
 {% extends "layout.html.twig" %}
 
+{% block title %}Page de réservation Strascook{% endblock %}
 
 {% block content %}
 
-	<div class="titre-resa">
-		<h1 class="uk-heading-small">Réservez votre expérience</h1>
+	<div class="uk-container uk-container-expand lw-div-accueil">
+  		<h1 class="uk-heading-small">Réservez votre expérience</h1>
 	</div>
+
 	{% if session.isLogin == true %}
 
 		<div class="form-resa">
@@ -113,7 +115,7 @@
 					</div>
 				</div>
 
-				<div class="uk-container sv-margin">
+				<div class="uk-container uk-container-expand sv-padding">
 					<a href="/reservation/add">
 						<button class="uk-button-large">Réservez</button>
 					</a>
