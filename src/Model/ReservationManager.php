@@ -8,6 +8,7 @@ use PDO;
 class ReservationManager extends AbstractManager
 {
     public const TABLE = "reservation";
+    /* insérer une réservation en BDD */
     public function insert(array $reservation)
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 

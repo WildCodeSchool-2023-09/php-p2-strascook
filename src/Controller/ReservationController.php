@@ -13,7 +13,7 @@ class ReservationController extends AbstractController
     {
         return $this->twig->render('Reservation/reservation.html.twig');
     }
-
+    /* ajouter une réservation */
     public function add()
     {
         $errors = [];
