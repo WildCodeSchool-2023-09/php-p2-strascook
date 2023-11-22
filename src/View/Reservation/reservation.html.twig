@@ -21,24 +21,25 @@
 								Vos coordonnées :</label>
 						</div>
 						<div class="sv-margin">
-							<input type="text" name="nom" value="{{ session.nom }}">
+							<input type="text" name="nom" value="{{ session.nom }}" disabled>
 						</div>
 						<div class="sv-margin">
-							<input type="text" name="prenom" value="{{ session.prenom }}">
-						</div>
-
-						<div class="sv-margin">
-							<input type="text" name="adresse" value="{{ session.adresse }}">
+							<input type="text" name="prenom" value="{{ session.prenom }}" disabled>
 						</div>
 
 						<div class="sv-margin">
-							<input type="text" name="tel" value="{{ session.tel }}">
+							<input type="text" name="adresse" value="{{ session.adresse }}" disabled>
+						</div>
+
+						<div class="sv-margin">
+							<input type="text" name="tel" value="{{ session.tel }}" disabled>
 						</div>
 
 						<div class="sv-margin email">
-							<input type="email" name="email" value="{{ session.email }}">
+							<input type="email" name="email" value="{{ session.email }}" disabled>
 						</div>
 					</div>
+					
 					<div>
 
 						<div class="colonne2">
